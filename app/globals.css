@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%; /* #f8fafc */
+    --foreground: 222 47% 11%; /* #0f172a */
+
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Brand Jewel Violet (#7132B0) */
+    --primary: 270 56% 44.3%;
+    --primary-foreground: 0 0% 100%;
+
+    --color-primary: #7132B0;
+    --color-primary-dark: #5D2693;
+    --color-primary-light: #8E44DB;
+    --color-primary-soft: #FAF5FF;
+    --color-primary-border: #E4D0F8;
+    --color-primary-hover: #5D2693;
+    --color-primary-active: #4A1C77;
+    --color-background: #F8FAFC;
+    --color-surface: #FFFFFF;
+    --color-border: #E2E8F0;
+    --color-text-primary: #0F172A;
+    --color-text-secondary: #475569;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 270 65% 96%;
+    --accent-foreground: 270 56% 44.3%;
+
+    --destructive: 350 89% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%; /* #e2e8f0 - Crisp, clean, professional */
+    --input: 214.3 31.8% 91.4%;
+    --ring: 270 56% 44.3%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 222.2 47% 6%; /* #090d16 - Obsidian Navy Slate */
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 47% 10.5%; /* #0f172a - Rich Surface */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 47% 10.5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Dark Mode Brand Primary: #A855F7 / #B77EEB High Contrast & Accessible */
+    --primary: 270 68% 68%;
+    --primary-foreground: 270 80% 10%;
+
+    --color-primary: #A855F7;
+    --color-primary-dark: #7132B0;
+    --color-primary-light: #D8B4FE;
+    --color-primary-soft: rgba(113, 50, 176, 0.22);
+    --color-primary-border: #5D2693;
+    --color-primary-hover: #9333EA;
+    --color-primary-active: #C084FC;
+    --color-background: #090D16;
+    --color-surface: #0F172A;
+    --color-border: #1E293B;
+    --color-text-primary: #F8FAFC;
+    --color-text-secondary: #94A3B8;
+
+    --secondary: 217.2 32.6% 16.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 16.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 270 68% 21%;
+    --accent-foreground: 270 68% 68%;
+
+    --destructive: 350 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217.2 32.6% 17.5%; /* #1e293b */
+    --input: 217.2 32.6% 17.5%;
+    --ring: 270 68% 68%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  html {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 antialiased font-sans transition-colors duration-150;
+    letter-spacing: -0.012em;
+  }
+  ::selection {
+    background-color: #f3e8ff;
+    color: #4a1c77;
+  }
+  .dark ::selection {
+    background-color: #3b1464;
+    color: #f3e8ff;
+  }
+}
+
+/* Premium Financial Numeric Alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbar-none utility */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth page-level content fade-in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-page-in {
+  animation: fadeInUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Custom Scrollbar for sleek fintech feel */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Modern Fintech Components */
+.fintech-card {
+  @apply relative rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-[#0f172a] shadow-fintech transition-all duration-200;
+}
+.fintech-card:hover {
+  @apply shadow-fintech-hover border-slate-300/80 dark:border-slate-700/80;
+}
+
+.fintech-glass {
+  @apply backdrop-blur-xl bg-white/80 dark:bg-[#0f172a]/80 border border-slate-200/70 dark:border-slate-800/70;
+}
+
+/* Ambient glow accent for active states */
+.fintech-glow {
+  box-shadow: 0 0 20px -3px rgba(113, 50, 176, 0.25);
+}
+
+/* Print styles for reports */
+@media print {
+  aside, header, .no-print {
+    display: none !important;
+  }
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Dark theme global utility harmony for enterprise financial dashboard */
+.dark .bg-white {
+  background-color: #0f172a;
+}
+.dark .bg-slate-50 {
+  background-color: #090d16;
+}
+.dark .bg-slate-50\/75,
+.dark .bg-slate-50\/60,
+.dark .bg-slate-50\/50,
+.dark .bg-slate-50\/40 {
+  background-color: rgba(15, 23, 42, 0.75);
+}
+.dark .bg-slate-100 {
+  background-color: #1e293b;
+}
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-200\/80,
+.dark .border-slate-200\/90 {
+  border-color: #1e293b;
+}
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #1e293b;
+}
+.dark .text-slate-900 {
+  color: #f8fafc;
+}
+.dark .text-slate-800 {
+  color: #f1f5f9;
+}
+.dark .text-slate-700 {
+  color: #e2e8f0;
+}
+.dark .text-slate-600 {
+  color: #94a3b8;
+}
+.dark .text-slate-500 {
+  color: #64748b;
+}
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-50\/80:hover,
+.dark .hover\:bg-slate-50\/70:hover,
+.dark .hover\:bg-slate-50\/60:hover {
+  background-color: rgba(30, 41, 59, 0.7);
+}
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-slate-100\/80:hover {
+  background-color: #1e293b;
+}

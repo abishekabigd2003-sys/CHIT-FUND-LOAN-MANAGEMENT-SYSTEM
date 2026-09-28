@@ -1,0 +1,13 @@
+export { authService as authApi } from '@/services/auth.service';
+export { customerService as customersApi } from '@/services/customer.service';
+export { kycService as kycApi } from '@/services/kyc.service';
+export { assessmentService as assessmentsApi } from '@/services/assessment.service';
+export { loanService as loansApi } from '@/services/loan.service';
+export { collectionService as collectionsApi } from '@/services/collection.service';
+export { approvalService as approvalsApi } from '@/services/approval.service';
+export { reportService as reportsApi } from '@/services/report.service';
+export { auditService as auditApi } from '@/services/audit.service';
+export { documentService as documentsApi } from '@/services/document.service';
+export { rolesApi } from './roles';
+export { usersApi } from './users';
+export { permissionsApi } from './permissions';

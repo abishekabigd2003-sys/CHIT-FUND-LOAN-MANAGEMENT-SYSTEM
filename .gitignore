@@ -1,0 +1,88 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.pnpm-store
+
+# Next.js Build Outputs & Cache
+/.next/
+/out/
+/build
+/dist
+.turbo
+.swc
+.cache
+
+# Environment Variables & Secrets
+.env
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+!.env.example
+
+# Sensitive credentials & certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.pub
+
+# Testing & Coverage
+/coverage
+*.lcov
+.nyc_output
+test-results/
+playwright-report/
+
+# Debug and Process Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Operating System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# IDEs & Code Editors
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+# Ignore VS Code internal state while retaining shared project configs
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# Vercel Deployment
+.vercel
+
+# AI Agents & Local Assistants
+.gemini/
+.agents/
+.claude/

@@ -23,10 +23,10 @@ export default function BikeLoansPage() {
               <ArrowLeft className="w-4 h-4 mr-1" /> Loans
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Bike & Two-Wheeler Loans
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Hypothecated two-wheeler vehicle asset agreements with RTO registration and engine chassis records.
           </p>
         </div>

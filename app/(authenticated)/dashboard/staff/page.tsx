@@ -69,12 +69,12 @@ export default function StaffDashboardPage() {
             </div>
 
             <div className="flex items-baseline gap-3 flex-wrap">
-              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 font-feature-settings">
+              <h1 className="page-title">
                 Field Officer Dashboard
               </h1>
             </div>
 
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl">
+            <p className="text-[13px] sm:text-[13.5px] text-slate-600 dark:text-slate-400 mt-1 max-w-2xl">
               Active Officer: <span className="font-semibold text-slate-800 dark:text-slate-200">{user?.name}</span>{' '}
               <span className="text-slate-400 dark:text-slate-500">({user?.email})</span> •{' '}
               <span className="font-medium text-brand-700 dark:text-brand-300">{user?.branch || 'Retail Branch'}</span>
@@ -95,7 +95,7 @@ export default function StaffDashboardPage() {
               href="/assessments/new"
               variant="outline"
               size="sm"
-              className="gap-1.5 text-xs font-semibold shadow-2xs border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xs"
+              className="gap-1.5 font-semibold shadow-2xs border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xs"
             >
               <ClipboardCheck className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
               <span>New Assessment</span>
@@ -104,7 +104,7 @@ export default function StaffDashboardPage() {
               href="/customers/new"
               variant="outline"
               size="sm"
-              className="gap-1.5 text-xs font-semibold shadow-2xs border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xs"
+              className="gap-1.5 font-semibold shadow-2xs border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xs"
             >
               <PlusCircle className="w-3.5 h-3.5 text-emerald-600" />
               <span>Register Borrower</span>

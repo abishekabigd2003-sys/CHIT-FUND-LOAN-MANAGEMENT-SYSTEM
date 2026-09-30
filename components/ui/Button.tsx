@@ -42,14 +42,14 @@ export function buttonVariants({
   };
 
   const sizes: Record<ButtonSize, string> = {
-    xs: 'h-7.5 px-2.5 text-xs font-medium rounded-lg gap-1 min-h-[30px]',
-    sm: 'h-8.5 px-3 text-xs sm:text-sm font-medium rounded-xl gap-1.5 min-h-[34px]',
-    md: 'h-9.5 px-4 text-xs sm:text-sm font-semibold rounded-xl gap-2 min-h-[38px]',
-    lg: 'h-10.5 px-5 text-sm sm:text-base font-semibold rounded-xl gap-2.5 min-h-[42px]',
-    'icon-xs': 'h-7.5 w-7.5 p-0 rounded-lg shrink-0 flex items-center justify-center',
-    'icon-sm': 'h-8.5 w-8.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
-    icon: 'h-9.5 w-9.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
-    'icon-lg': 'h-10.5 w-10.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    xs: 'h-8 px-2.5 text-[13px] font-semibold rounded-lg gap-1.5 min-h-[32px]',
+    sm: 'h-9 px-3.5 text-[14px] font-semibold rounded-xl gap-1.5 min-h-[36px]',
+    md: 'h-10 px-4 text-[14.5px] font-semibold rounded-xl gap-2 min-h-[40px]',
+    lg: 'h-11 px-5 text-[15px] font-semibold rounded-xl gap-2.5 min-h-[44px]',
+    'icon-xs': 'h-8 w-8 p-0 rounded-lg shrink-0 flex items-center justify-center',
+    'icon-sm': 'h-9 w-9 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    icon: 'h-10 w-10 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    'icon-lg': 'h-11 w-11 p-0 rounded-xl shrink-0 flex items-center justify-center',
   };
 
   return cn(

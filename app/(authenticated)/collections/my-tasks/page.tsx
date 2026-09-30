@@ -21,11 +21,11 @@ export default function MyTasksPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <UserCheck className="w-6 h-6 text-blue-600" />
+          <h1 className="page-title flex items-center gap-2.5">
+            <UserCheck className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             My Collection Tasks & Field Itinerary
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Active portfolio assigned to {user?.name || 'Staff Officer'}. Log doorstep visits and daily remarks.
           </p>
         </div>

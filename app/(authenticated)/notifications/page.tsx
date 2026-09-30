@@ -73,10 +73,10 @@ export default function NotificationsCenterPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             System Notification Center
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Operational alerts, upcoming EMI collections, auction notices, and KYC review requests.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function NotificationsCenterPage() {
             variant="outline"
             size="sm"
             onClick={() => markAllAsRead.mutate()}
-            className="gap-1.5 text-xs bg-white dark:bg-slate-900"
+            className="gap-1.5 bg-white dark:bg-slate-900"
           >
             <CheckCheck className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
             <span>Mark All As Read</span>
@@ -97,7 +97,7 @@ export default function NotificationsCenterPage() {
       {/* Filter Bar */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
         <div className="flex items-center gap-2.5 w-full sm:w-auto flex-wrap">
-          <div className="w-full sm:w-44">
+          <div className="w-full sm:w-48">
             <Select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
@@ -109,11 +109,11 @@ export default function NotificationsCenterPage() {
                 { label: 'KYC Verification', value: 'KYC_PENDING' },
                 { label: 'System Audit', value: 'SYSTEM' },
               ]}
-              className="h-9 text-xs py-1"
+              className="h-10 text-[14px]"
             />
           </div>
 
-          <div className="w-full sm:w-36">
+          <div className="w-full sm:w-40">
             <Select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
@@ -122,12 +122,12 @@ export default function NotificationsCenterPage() {
                 { label: 'Unread Only', value: 'UNREAD' },
                 { label: 'Read Only', value: 'READ' },
               ]}
-              className="h-9 text-xs py-1"
+              className="h-10 text-[14px]"
             />
           </div>
         </div>
 
-        <div className="text-xs text-slate-400 self-start sm:self-auto">
+        <div className="text-[13px] text-slate-500 dark:text-slate-400 font-medium self-start sm:self-auto">
           Showing {filtered.length} of {notifications.length} alerts
         </div>
       </div>

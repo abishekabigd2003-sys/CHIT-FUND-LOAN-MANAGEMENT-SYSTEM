@@ -16,10 +16,10 @@ export default function NewCustomerPage() {
           <ArrowLeft className="w-4 h-4" />
         </Link>
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="page-title">
             Register New Customer
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Complete the 6-step registration process to onboard a subscriber or borrower.
           </p>
         </div>

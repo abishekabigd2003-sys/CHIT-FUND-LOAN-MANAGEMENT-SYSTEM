@@ -20,10 +20,10 @@ export default function CollectionsLogPage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Payments
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="page-title">
             Collections Receipt Log
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Audit log of all settled receipts issued across Cash, UPI, and Bank transfer channels.
           </p>
         </div>

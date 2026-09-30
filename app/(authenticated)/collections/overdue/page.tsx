@@ -15,11 +15,11 @@ export default function OverdueCollectionsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <h1 className="page-title flex items-center gap-2.5">
             <AlertTriangle className="w-6 h-6 text-amber-500" />
             Overdue Accounts & Delinquency Tracking
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Accounts past contractual payment date requiring intense calling, field verification, and recovery intervention.
           </p>
         </div>

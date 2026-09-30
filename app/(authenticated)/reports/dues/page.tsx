@@ -39,10 +39,10 @@ export default function DueReportPage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1 stroke-[2]" /> Back to Reports
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Dues & Delinquency Aging Report
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Aging summary of upcoming and delinquent installments for recovery task forces.
           </p>
         </div>

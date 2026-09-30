@@ -90,11 +90,11 @@ export default function UsersSettingsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <h1 className="page-title flex items-center gap-2.5">
             <Users className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Staff & User Directory
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="page-subtitle">
             Manage system users, branch affiliations, and assign dynamic RBAC roles.
           </p>
         </div>

@@ -23,10 +23,10 @@ export default function NomineeLoansPage() {
               <ArrowLeft className="w-4 h-4 mr-1" /> Loans
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Nominee Co-Applicant Loans
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Credit lines secured with registered nominee co-signers and family beneficiary pledges.
           </p>
         </div>

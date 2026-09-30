@@ -76,8 +76,8 @@ export function Modal({
         {(title || description) && (
           <div className="flex items-start justify-between p-5 sm:p-6 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-[#0d1527]/50 shrink-0">
             <div>
-              {title && <h2 className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">{title}</h2>}
-              {description && <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{description}</p>}
+              {title && <h2 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">{title}</h2>}
+              {description && <p className="text-[13.5px] sm:text-[14px] text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{description}</p>}
             </div>
             <button
               onClick={onClose}

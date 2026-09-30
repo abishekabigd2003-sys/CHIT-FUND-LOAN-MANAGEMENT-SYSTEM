@@ -31,11 +31,11 @@ export default function AssessmentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2.5">
+          <h1 className="page-title flex items-center gap-2.5">
             <ClipboardCheck className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Loan Credit Assessments
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Conduct borrower credit appraisals, bureau inquiries, FOIR ratios, and submit for Owner Approval.
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function AssessmentsPage() {
           <button
             key={tab.value}
             onClick={() => setSelectedStatus(tab.value)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+            className={`px-3.5 py-1.5 rounded-xl text-[13.5px] sm:text-[14px] font-semibold whitespace-nowrap transition-colors ${
               selectedStatus === tab.value
                 ? 'bg-brand-600 text-white'
                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'

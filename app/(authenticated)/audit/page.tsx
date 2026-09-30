@@ -19,11 +19,11 @@ export default function AuditTrailPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2.5">
+          <h1 className="page-title flex items-center gap-2.5">
             <History className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Immutable System Audit Trail
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Complete compliance event log tracking status mutations, owner sanction actions, staff collection entries, and IP stamps.
           </p>
         </div>
@@ -38,7 +38,7 @@ export default function AuditTrailPage() {
             placeholder="Search record ID, officer, or event narrative..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full text-xs sm:text-sm pl-9 pr-3 h-9 sm:h-10 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-brand-500/20"
+            className="w-full text-[14px] sm:text-[14.5px] pl-9 pr-3 h-10 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-brand-500/20"
           />
         </div>
 
@@ -46,7 +46,7 @@ export default function AuditTrailPage() {
           <select
             value={moduleFilter}
             onChange={(e) => setModuleFilter(e.target.value)}
-            className="w-full sm:w-auto text-xs sm:text-sm rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 h-9 sm:h-10 text-slate-900 dark:text-slate-100 font-medium focus:outline-hidden focus:ring-2 focus:ring-brand-500/20"
+            className="w-full sm:w-auto text-[14px] sm:text-[14.5px] rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 h-10 text-slate-900 dark:text-slate-100 font-medium focus:outline-hidden focus:ring-2 focus:ring-brand-500/20"
           >
             <option value="ALL">All Modules</option>
             <option value="APPROVALS">Approvals</option>

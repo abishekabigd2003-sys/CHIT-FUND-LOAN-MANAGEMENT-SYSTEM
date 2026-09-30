@@ -31,7 +31,7 @@ export function Badge({ className, variant = 'default', dot = false, pulse = fal
   return (
     <div
       className={cn(
-        'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide border transition-all duration-150 select-none shadow-2xs',
+        'inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[12px] sm:text-[12.5px] font-semibold tracking-wide border transition-all duration-150 select-none shadow-2xs',
         variants[variant],
         className
       )}

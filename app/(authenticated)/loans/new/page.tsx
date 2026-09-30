@@ -18,10 +18,10 @@ export default function NewLoanPage() {
           <ArrowLeft className="w-4 h-4" />
         </Button>
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Issue New Loan Application
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="page-subtitle">
             Select borrower, collateral type (Gold, Bike, Guarantor, Nominee), interest terms, and appraisal values.
           </p>
         </div>

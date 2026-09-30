@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 export function Table({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) {
   return (
     <div className="relative w-full overflow-x-auto scrollbar-none">
-      <table className={cn('w-full caption-bottom text-sm border-collapse', className)} {...props} />
+      <table className={cn('w-full caption-bottom text-[14px] sm:text-[14.5px] border-collapse', className)} {...props} />
     </div>
   );
 }
@@ -43,7 +43,7 @@ export function TableHead({ className, ...props }: React.ThHTMLAttributes<HTMLTa
   return (
     <th
       className={cn(
-        'h-9 sm:h-10 px-3.5 sm:px-4 text-left align-middle text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider select-none whitespace-nowrap [&:has([role=checkbox])]:pr-0',
+        'h-10 px-3.5 sm:px-4 text-left align-middle text-xs sm:text-[12.5px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider select-none whitespace-nowrap [&:has([role=checkbox])]:pr-0',
         className
       )}
       {...props}
@@ -54,7 +54,7 @@ export function TableHead({ className, ...props }: React.ThHTMLAttributes<HTMLTa
 export function TableCell({ className, ...props }: React.TdHTMLAttributes<HTMLTableCellElement>) {
   return (
     <td
-      className={cn('p-3 sm:p-3.5 align-middle text-sm text-slate-700 dark:text-slate-200 [&:has([role=checkbox])]:pr-0', className)}
+      className={cn('p-3 sm:p-3.5 align-middle text-[14px] sm:text-[14.5px] text-slate-700 dark:text-slate-200 leading-normal [&:has([role=checkbox])]:pr-0', className)}
       {...props}
     />
   );

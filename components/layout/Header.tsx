@@ -80,18 +80,18 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
           {/* Global Search Command Bar */}
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="w-full flex items-center justify-between px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 hover:bg-white dark:hover:bg-slate-850 hover:border-slate-300 dark:hover:border-slate-700 text-slate-400 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all text-xs sm:text-sm text-left shadow-2xs cursor-pointer min-h-[38px] group"
+            className="w-full flex items-center justify-between px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/80 hover:bg-white dark:hover:bg-slate-850 hover:border-slate-300 dark:hover:border-slate-700 text-slate-400 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all text-sm text-left shadow-2xs cursor-pointer min-h-[38px] group"
           >
             <div className="flex items-center gap-2.5 min-w-0">
               <Search className="w-4 h-4 text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 shrink-0 stroke-[2] transition-colors" />
-              <span className="font-medium text-slate-500 dark:text-slate-400 truncate hidden sm:inline">
+              <span className="font-medium text-slate-500 dark:text-slate-400 truncate hidden sm:inline text-sm">
                 Search customers, loans, chits...
               </span>
-              <span className="font-medium text-slate-500 dark:text-slate-400 truncate sm:hidden">
+              <span className="font-medium text-slate-500 dark:text-slate-400 truncate sm:hidden text-sm">
                 Search...
               </span>
             </div>
-            <kbd className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0 ml-2">
+            <kbd className="hidden md:inline-flex items-center gap-1 text-[11.5px] font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0 ml-2">
               <span className="text-xs">⌘</span>K
             </kbd>
           </button>
@@ -131,10 +131,10 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
               </div>
 
               <div className="hidden md:block">
-                <p className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 leading-tight">
+                <p className="text-[14px] sm:text-[14.5px] font-semibold text-slate-900 dark:text-slate-100 leading-tight">
                   {user?.name || 'Administrator'}
                 </p>
-                <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-none mt-1 font-medium">
+                <p className="text-[12px] sm:text-[12.5px] text-slate-500 dark:text-slate-400 leading-none mt-1 font-medium">
                   {user?.branch || 'Corporate HQ'}
                 </p>
               </div>
@@ -150,10 +150,10 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
             {showProfileMenu && (
               <div className="absolute right-0 mt-2 w-72 rounded-2xl bg-white dark:bg-[#0f172a] border border-slate-200 dark:border-slate-800 shadow-2xl z-40 p-2 animate-in fade-in-0 zoom-in-95">
                 <div className="px-3.5 py-3 border-b border-slate-100 dark:border-slate-800 mb-1">
-                  <p className="text-sm font-bold text-slate-900 dark:text-slate-100">{user?.name}</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5 font-medium">{user?.email}</p>
-                  <div className="mt-2 flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400 font-medium">
-                    <Building2 className="w-3.5 h-3.5 text-slate-400 stroke-[1.8]" />
+                  <p className="text-[15px] font-bold text-slate-900 dark:text-slate-100">{user?.name}</p>
+                  <p className="text-[13px] text-slate-500 dark:text-slate-400 truncate mt-0.5 font-medium">{user?.email}</p>
+                  <div className="mt-2 flex items-center gap-1.5 text-[13px] text-slate-600 dark:text-slate-400 font-medium">
+                    <Building2 className="w-4 h-4 text-slate-400 stroke-[1.8]" />
                     <span>{user?.branch || 'Corporate HQ'}</span>
                   </div>
                 </div>
@@ -163,7 +163,7 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
                     href="/settings"
                     prefetch={true}
                     onClick={() => setShowProfileMenu(false)}
-                    className="flex items-center gap-2.5 px-3.5 py-2.5 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"
+                    className="flex items-center gap-2.5 px-3.5 py-2.5 text-[14px] font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors"
                   >
                     <UserIcon className="w-4 h-4 text-slate-400 stroke-[1.8]" />
                     <span>Account Settings</span>
@@ -182,7 +182,7 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
                     setShowProfileMenu(false);
                     logout();
                   }}
-                  className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-xs sm:text-sm font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-xl transition-colors cursor-pointer"
+                  className="w-full flex items-center gap-2.5 px-3.5 py-2.5 text-[14px] font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-xl transition-colors cursor-pointer"
                 >
                   <LogOut className="w-4 h-4 stroke-[1.8]" />
                   <span>Sign Out</span>

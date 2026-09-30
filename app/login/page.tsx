@@ -84,7 +84,7 @@ export default function LoginPage() {
 
         <div className="flex items-center justify-center gap-2 mb-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-          <span className="text-[11px] font-bold uppercase tracking-widest text-brand-400 font-mono">
+          <span className="text-[12px] font-bold uppercase tracking-widest text-brand-400 font-mono">
             Enterprise Financial Core
           </span>
         </div>
@@ -92,7 +92,7 @@ export default function LoginPage() {
         <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
           Chit & Loan Enterprise
         </h1>
-        <p className="mt-1 text-xs text-slate-400 font-medium">
+        <p className="mt-1.5 text-[14px] text-slate-400 font-medium">
           Role-Based Access Control (RBAC) Banking Portal
         </p>
       </div>
@@ -106,7 +106,7 @@ export default function LoginPage() {
           <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit(onSubmit)}>
             {/* Error Message Alert */}
             {authError && (
-              <div className="p-3.5 rounded-xl bg-rose-500/15 border border-rose-500/40 text-rose-300 text-xs flex items-start gap-2.5 animate-in fade-in-0 slide-in-from-top-1">
+              <div className="p-3.5 rounded-xl bg-rose-500/15 border border-rose-500/40 text-rose-300 text-[13px] flex items-start gap-2.5 animate-in fade-in-0 slide-in-from-top-1">
                 <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5 stroke-[2]" />
                 <span className="leading-relaxed">{authError}</span>
               </div>
@@ -163,10 +163,10 @@ export default function LoginPage() {
           {/* Quick Demo Credentials Autofill Helper */}
           <div className="mt-6 pt-5 border-t border-slate-800">
             <div className="flex items-center justify-between mb-2.5">
-              <p className="text-[11px] uppercase font-bold tracking-wider text-slate-400">
+              <p className="text-[12px] uppercase font-bold tracking-wider text-slate-400">
                 Demo Roles (Click to Autofill)
               </p>
-              <span className="text-[10px] text-slate-500 font-mono">Instant Test Access</span>
+              <span className="text-[11px] text-slate-500 font-mono">Instant Test Access</span>
             </div>
 
             <div className="grid grid-cols-1 gap-2">
@@ -181,17 +181,17 @@ export default function LoginPage() {
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-white">Admin Role</span>
-                      <span className="text-[10px] bg-brand-950 text-brand-400 px-1.5 py-0.2 rounded border border-brand-800 font-mono">
+                      <span className="text-[13.5px] font-bold text-white">Admin Role</span>
+                      <span className="text-[11px] bg-brand-950 text-brand-400 px-1.5 py-0.2 rounded border border-brand-800 font-mono">
                         /dashboard/admin
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-400 block font-mono truncate">
+                    <span className="text-[12px] text-slate-400 block font-mono truncate">
                       admin@chitfund.com • Admin@123
                     </span>
                   </div>
                 </div>
-                <span className="text-[11px] text-brand-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
+                <span className="text-[12px] text-brand-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
                   Use →
                 </span>
               </button>
@@ -207,17 +207,17 @@ export default function LoginPage() {
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-white">Management Role</span>
-                      <span className="text-[10px] bg-purple-950 text-purple-400 px-1.5 py-0.2 rounded border border-purple-800 font-mono">
+                      <span className="text-[13.5px] font-bold text-white">Management Role</span>
+                      <span className="text-[11px] bg-purple-950 text-purple-400 px-1.5 py-0.2 rounded border border-purple-800 font-mono">
                         /dashboard/management
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-400 block font-mono truncate">
+                    <span className="text-[12px] text-slate-400 block font-mono truncate">
                       management@chitfund.com • Management@123
                     </span>
                   </div>
                 </div>
-                <span className="text-[11px] text-purple-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
+                <span className="text-[12px] text-purple-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
                   Use →
                 </span>
               </button>
@@ -233,17 +233,17 @@ export default function LoginPage() {
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-bold text-white">Staff Role</span>
-                      <span className="text-[10px] bg-emerald-950 text-emerald-400 px-1.5 py-0.2 rounded border border-emerald-800 font-mono">
+                      <span className="text-[13.5px] font-bold text-white">Staff Role</span>
+                      <span className="text-[11px] bg-emerald-950 text-emerald-400 px-1.5 py-0.2 rounded border border-emerald-800 font-mono">
                         /dashboard/staff
                       </span>
                     </div>
-                    <span className="text-[11px] text-slate-400 block font-mono truncate">
+                    <span className="text-[12px] text-slate-400 block font-mono truncate">
                       staff@chitfund.com • Staff@123
                     </span>
                   </div>
                 </div>
-                <span className="text-[11px] text-emerald-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
+                <span className="text-[12px] text-emerald-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity shrink-0 ml-2">
                   Use →
                 </span>
               </button>

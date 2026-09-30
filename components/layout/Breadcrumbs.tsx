@@ -40,14 +40,14 @@ export const Breadcrumbs = React.memo(function Breadcrumbs() {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="flex items-center space-x-1.5 sm:space-x-2 text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mb-3 sm:mb-4 overflow-x-auto whitespace-nowrap scrollbar-none py-1"
+      className="flex items-center space-x-1.5 sm:space-x-2 text-[14px] font-medium text-slate-500 dark:text-slate-400 mb-3 sm:mb-4 overflow-x-auto whitespace-nowrap scrollbar-none py-1"
     >
       <Link
         href={dashboardHref}
         prefetch={true}
         className="flex items-center hover:text-slate-900 dark:hover:text-white transition-colors shrink-0 font-medium"
       >
-        <Home className="w-3.5 h-3.5 mr-1 text-slate-400 dark:text-slate-500 stroke-[1.8]" />
+        <Home className="w-4 h-4 mr-1.5 text-slate-400 dark:text-slate-500 stroke-[1.8]" />
         <span>Dashboard</span>
       </Link>
       {segments.map((segment, index) => {
@@ -56,7 +56,7 @@ export const Breadcrumbs = React.memo(function Breadcrumbs() {
 
         return (
           <React.Fragment key={href}>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 shrink-0 stroke-[2]" />
+            <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 shrink-0 stroke-[2]" />
             {isLast ? (
               <span className="font-semibold text-slate-800 dark:text-slate-200 truncate">
                 {formatSegment(segment)}

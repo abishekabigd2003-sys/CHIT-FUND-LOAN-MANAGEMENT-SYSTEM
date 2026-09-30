@@ -60,14 +60,14 @@ export default function ApprovalDetailPage() {
           </Link>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+              <h1 className="page-title">
                 {approval.approvalNumber}
               </h1>
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-700 border border-amber-200 dark:border-amber-800">
+              <span className="px-2.5 py-0.5 rounded-full text-[12px] font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-700 border border-amber-200 dark:border-amber-800">
                 {approval.status}
               </span>
             </div>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="page-subtitle">
               Submitted by {approval.submittedBy.name} ({approval.submittedBy.role}) on{' '}
               {formatDate(approval.submittedBy.submittedAt)}
             </p>

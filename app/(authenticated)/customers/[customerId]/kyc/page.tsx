@@ -57,14 +57,14 @@ export default function CustomerKycDetailPage() {
         </Link>
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="page-title">
               KYC Dossier: {profile.customerName}
             </h1>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-50 dark:bg-blue-950/40 text-blue-700 border border-blue-200 dark:border-blue-800">
+            <span className="px-2.5 py-0.5 rounded-full text-[12px] font-bold bg-blue-50 dark:bg-blue-950/40 text-blue-700 border border-blue-200 dark:border-blue-800">
               {profile.status}
             </span>
           </div>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             {profile.customerPhone} • {profile.customerEmail} • Risk Category: {profile.riskCategory}
           </p>
         </div>

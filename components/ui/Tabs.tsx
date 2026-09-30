@@ -25,7 +25,7 @@ export function Tabs({ tabs, activeTab, onChange, className }: TabsProps) {
               key={tab.id}
               onClick={() => onChange(tab.id)}
               className={cn(
-                'whitespace-nowrap py-3 px-1 font-semibold text-xs sm:text-sm flex items-center gap-2 transition-all relative cursor-pointer',
+                'whitespace-nowrap py-3 px-1 font-semibold text-[14px] sm:text-[14.5px] flex items-center gap-2 transition-all relative cursor-pointer',
                 isActive
                   ? 'text-brand-700 dark:text-brand-300'
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100'
@@ -35,7 +35,7 @@ export function Tabs({ tabs, activeTab, onChange, className }: TabsProps) {
               {tab.badge !== undefined && (
                 <span
                   className={cn(
-                    'px-2 py-0.5 rounded-full text-[11px] font-bold tabular-nums',
+                    'px-2 py-0.5 rounded-full text-[12px] font-bold tabular-nums',
                     isActive
                       ? 'bg-brand-100 dark:bg-brand-950/80 text-brand-700 dark:text-brand-300 border border-brand-200/60 dark:border-brand-800/60'
                       : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'

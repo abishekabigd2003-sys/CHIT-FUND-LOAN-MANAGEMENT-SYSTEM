@@ -216,7 +216,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
     <div className="space-y-0.5">
       {showSectionHeader && (
         <div className="pt-3 pb-1 px-3 first:pt-1">
-          <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase select-none">
+          <p className="text-[12px] font-bold tracking-wider text-slate-400 uppercase select-none">
             {item.section}
           </p>
         </div>
@@ -229,7 +229,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
         onTouchStart={() => onPrefetch(item.href)}
         onClick={() => onClose && onClose()}
         className={cn(
-          'relative flex items-center justify-between px-3 py-2 sm:py-2.5 rounded-xl text-sm font-medium transition-all group select-none',
+          'relative flex items-center justify-between px-3 py-2 sm:py-2.5 rounded-xl text-[14px] sm:text-[14.5px] font-medium transition-all group select-none',
           isParentActive
             ? 'bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-md shadow-brand-950/60 font-semibold'
             : 'text-slate-300 hover:bg-slate-800/70 hover:text-white'
@@ -254,7 +254,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
           {item.module === 'notifications' && unreadCount > 0 && (
             <span
               className={cn(
-                'px-2 py-0.5 rounded-full text-[11px] font-bold shrink-0',
+                'px-2 py-0.5 rounded-full text-[11.5px] sm:text-[12px] font-bold shrink-0',
                 isParentActive ? 'bg-white text-brand-700' : 'bg-rose-500 text-white'
               )}
             >
@@ -264,7 +264,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
           {item.badge !== undefined && item.module !== 'notifications' && (
             <span
               className={cn(
-                'px-2 py-0.5 rounded-full text-[11px] font-bold shrink-0',
+                'px-2 py-0.5 rounded-full text-[11.5px] sm:text-[12px] font-bold shrink-0',
                 isParentActive ? 'bg-white text-brand-700' : 'bg-rose-500 text-white'
               )}
             >
@@ -296,7 +296,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
                 onTouchStart={() => onPrefetch(sub.href)}
                 onClick={() => onClose && onClose()}
                 className={cn(
-                  'block py-1.5 px-3 rounded-lg text-xs sm:text-[13px] font-medium transition-colors',
+                  'block py-1.5 px-3 rounded-lg text-[13px] sm:text-[13.5px] font-medium transition-colors',
                   isSubActive
                     ? 'text-brand-300 font-semibold bg-brand-950/60'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/40'

@@ -16,11 +16,11 @@ export default function NewAssessmentPage() {
           <ArrowLeft className="w-4 h-4" />
         </Link>
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-blue-600" />
+          <h1 className="page-title flex items-center gap-2.5">
+            <ShieldCheck className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             New Loan Assessment Appraisal
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Evaluate customer eligibility, credit score, external liabilities, and forward for Owner Sanction.
           </p>
         </div>

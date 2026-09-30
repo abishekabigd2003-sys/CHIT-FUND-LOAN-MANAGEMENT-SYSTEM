@@ -23,10 +23,10 @@ export default function GoldLoansPage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Loans
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Gold Loan Portfolio
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-normal">
+          <p className="page-subtitle">
             Active gold jewelry pledge agreements, karat purity assays, and market rate appraisal valuations.
           </p>
         </div>

@@ -30,10 +30,10 @@ export default function LoansPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Loan Accounts & Collaterals
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+          <p className="page-subtitle">
             Manage Gold loans, Two-wheeler vehicle hypothecations, and Personal guarantor credit facilities.
           </p>
         </div>

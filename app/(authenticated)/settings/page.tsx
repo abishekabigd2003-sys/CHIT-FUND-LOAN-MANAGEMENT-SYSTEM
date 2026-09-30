@@ -78,10 +78,10 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-6xl">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-1">
         <div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Enterprise Settings & System Config
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+          <p className="page-subtitle">
             Configure visual themes, organization profile, API service connectors, and role security tiers.
           </p>
         </div>

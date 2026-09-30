@@ -17,7 +17,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="w-full space-y-1.5 text-left">
         {label && (
-          <label htmlFor={inputId} className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 tracking-tight">
+          <label htmlFor={inputId} className="block text-[13.5px] sm:text-[14px] font-medium text-slate-700 dark:text-slate-300 tracking-tight">
             {label}
             {props.required && <span className="text-rose-500 ml-1 font-bold">*</span>}
           </label>
@@ -33,7 +33,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             type={type}
             className={cn(
-              'block w-full h-9 sm:h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] px-3.5 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500',
+              'block w-full h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] px-3.5 py-2 text-[14.5px] sm:text-[15px] text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500',
               'transition-all duration-150',
               'hover:border-slate-300 dark:hover:border-slate-700',
               'focus:border-brand-500 dark:focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:focus:ring-brand-400/25',
@@ -52,12 +52,12 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error ? (
-          <p className="text-xs text-rose-600 dark:text-rose-400 font-medium flex items-center gap-1 mt-1">
+          <p className="text-[13px] text-rose-600 dark:text-rose-400 font-medium flex items-center gap-1 mt-1">
             <AlertCircle className="w-3.5 h-3.5 shrink-0 stroke-[2]" />
             <span>{error}</span>
           </p>
         ) : helperText ? (
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{helperText}</p>
+          <p className="text-[13px] sm:text-[13.5px] text-slate-500 dark:text-slate-400 mt-1 font-medium">{helperText}</p>
         ) : null}
       </div>
     );

@@ -84,11 +84,11 @@ export default function ManagementDashboardPage() {
             <span className="text-xs text-slate-400 font-medium">• Portfolio Governance & Reporting</span>
           </div>
 
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Management Operations Overview
           </h1>
 
-          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1 flex-wrap">
+          <div className="flex items-center gap-2 text-[13px] sm:text-[13.5px] text-slate-500 dark:text-slate-400 mt-1.5 flex-wrap">
             <span>
               Executive: <strong className="text-slate-700 dark:text-slate-200">{user?.name}</strong> ({user?.email})
             </span>
@@ -97,7 +97,7 @@ export default function ManagementDashboardPage() {
               Office: <strong className="text-slate-700 dark:text-slate-200">{user?.branch || 'Executive Directorate'}</strong>
             </span>
             <span>•</span>
-            <span className="font-mono text-[11px] text-slate-400 dark:text-slate-500">
+            <span className="font-mono text-[12px] text-slate-400 dark:text-slate-500">
               All Branches Reporting Active
             </span>
           </div>
@@ -209,8 +209,8 @@ export default function ManagementDashboardPage() {
         <Card className="lg:col-span-2 border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
             <div>
-              <CardTitle className="text-base font-bold">Collections vs Projected Recovery</CardTitle>
-              <CardDescription className="text-xs">
+              <CardTitle>Collections vs Projected Recovery</CardTitle>
+              <CardDescription>
                 Semi-annual tracking of EMI cash flow and auction dividend returns
               </CardDescription>
             </div>
@@ -231,8 +231,8 @@ export default function ManagementDashboardPage() {
 
         <Card className="border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="pb-3 border-b border-slate-100 dark:border-slate-800/80">
-            <CardTitle className="text-base font-bold">Collateral Risk Distribution</CardTitle>
-            <CardDescription className="text-xs">
+            <CardTitle>Collateral Risk Distribution</CardTitle>
+            <CardDescription>
               Asset classification of secured vs personal loan portfolio
             </CardDescription>
           </CardHeader>
@@ -246,8 +246,8 @@ export default function ManagementDashboardPage() {
       <Card className="border-slate-200/90 dark:border-slate-800 shadow-2xs">
         <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
           <div>
-            <CardTitle className="text-base font-bold">Retail Branch Efficiency & Collection Targets</CardTitle>
-            <CardDescription className="text-xs">Monthly recovery scorecard across operational territories</CardDescription>
+            <CardTitle>Retail Branch Efficiency & Collection Targets</CardTitle>
+            <CardDescription>Monthly recovery scorecard across operational territories</CardDescription>
           </div>
           <Button
             href="/reports/staff"

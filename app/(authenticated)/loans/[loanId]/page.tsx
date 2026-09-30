@@ -75,10 +75,10 @@ export default function LoanDetailPage() {
                 {loan.status}
               </Badge>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="page-title">
               Borrower: {loan.customerName}
             </h1>
-            <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+            <p className="page-subtitle">
               Applied on {formatDate(loan.createdAt)} •{' '}
               <Link href={`/customers/${loan.customerId}`} className="text-brand-600 dark:text-brand-400 font-medium hover:underline">
                 View Borrower Profile

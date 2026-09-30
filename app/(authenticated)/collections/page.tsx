@@ -16,11 +16,11 @@ export default function CollectionDashboardPage() {
       {/* Title & Quick Links */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2.5">
+          <h1 className="page-title flex items-center gap-2.5">
             <CreditCard className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Collection Automation & Staff Operations
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Real-time tracking of upcoming dues, automated reminders, staff task allocation, and recovery escalation.
           </p>
         </div>

@@ -19,10 +19,10 @@ export default function PaymentSchedulePage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Payments
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="page-title">
             Payment Schedule & Calendar View
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Visualize installment due dates, overdue flags, and field collection workload by calendar day.
           </p>
         </div>

@@ -80,11 +80,11 @@ export default function AdminDashboardPage() {
             <span className="text-xs text-slate-400 font-medium">• Root Administrative Authority</span>
           </div>
 
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="page-title">
             Executive Owner Dashboard
           </h1>
 
-          <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1 flex-wrap">
+          <div className="flex items-center gap-2 text-[13px] sm:text-[13.5px] text-slate-500 dark:text-slate-400 mt-1.5 flex-wrap">
             <span>
               Officer: <strong className="text-slate-700 dark:text-slate-200">{user?.name}</strong> ({user?.email})
             </span>
@@ -93,7 +93,7 @@ export default function AdminDashboardPage() {
               Branch: <strong className="text-slate-700 dark:text-slate-200">{user?.branch || 'Corporate HQ'}</strong>
             </span>
             <span>•</span>
-            <span className="font-mono text-[11px] text-slate-400 dark:text-slate-500">
+            <span className="font-mono text-[12px] text-slate-400 dark:text-slate-500">
               Settlement Engine Active
             </span>
           </div>
@@ -238,8 +238,8 @@ export default function AdminDashboardPage() {
         <Card className="lg:col-span-2 border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
             <div>
-              <CardTitle className="text-base font-bold">Monthly Collections & Recovery</CardTitle>
-              <CardDescription className="text-xs">
+              <CardTitle>Monthly Collections & Recovery</CardTitle>
+              <CardDescription>
                 Consolidated chit pool installments and loan EMI receipts (6-month comparative trend)
               </CardDescription>
             </div>
@@ -260,8 +260,8 @@ export default function AdminDashboardPage() {
 
         <Card className="border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="pb-3 border-b border-slate-100 dark:border-slate-800/80">
-            <CardTitle className="text-base font-bold">Asset Portfolio Mix</CardTitle>
-            <CardDescription className="text-xs">
+            <CardTitle>Asset Portfolio Mix</CardTitle>
+            <CardDescription>
               Exposure distribution across Gold, Bike, Business, and Personal categories
             </CardDescription>
           </CardHeader>
@@ -276,8 +276,8 @@ export default function AdminDashboardPage() {
         <Card className="lg:col-span-2 border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
             <div>
-              <CardTitle className="text-base font-bold">Upcoming Collection Schedule</CardTitle>
-              <CardDescription className="text-xs">
+              <CardTitle>Upcoming Collection Schedule</CardTitle>
+              <CardDescription>
                 Scheduled borrower installments and reminders due this week
               </CardDescription>
             </div>
@@ -299,8 +299,8 @@ export default function AdminDashboardPage() {
         <Card className="border-slate-200/90 dark:border-slate-800 shadow-2xs">
           <CardHeader className="flex flex-row items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800/80">
             <div>
-              <CardTitle className="text-base font-bold">System Audit Ledger</CardTitle>
-              <CardDescription className="text-xs">Real-time immutable event log</CardDescription>
+              <CardTitle>System Audit Ledger</CardTitle>
+              <CardDescription>Real-time immutable event log</CardDescription>
             </div>
             <Button
               href="/audit"

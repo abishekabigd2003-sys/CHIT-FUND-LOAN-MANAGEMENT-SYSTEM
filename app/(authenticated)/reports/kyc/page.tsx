@@ -26,11 +26,11 @@ export default function KycComplianceReportPage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1 stroke-[2]" /> Back to Reports
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <h1 className="page-title flex items-center gap-2.5">
             <ShieldCheck className="w-6 h-6 text-brand-600 dark:text-brand-400 stroke-[2] shrink-0" />
             KYC & Document Verification Audit Report
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+          <p className="page-subtitle">
             Regulatory verification rates, document expiry tracking, and customer risk profiling metrics.
           </p>
         </div>

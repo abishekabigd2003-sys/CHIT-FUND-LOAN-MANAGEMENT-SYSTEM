@@ -78,10 +78,10 @@ export default function ReportsOverviewPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        <h1 className="page-title">
           Executive Reports & Financial Audits
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+        <p className="page-subtitle">
           Download regulatory compliance ledgers, collection sheets, and loan portfolio analytics.
         </p>
       </div>
@@ -95,8 +95,8 @@ export default function ReportsOverviewPage() {
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 shadow-2xs ${rep.color}`}>
                   <Icon className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <CardTitle className="text-sm sm:text-base font-bold">{rep.title}</CardTitle>
-                <CardDescription className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed font-normal">
+                <CardTitle className="text-base sm:text-[17px] font-semibold">{rep.title}</CardTitle>
+                <CardDescription className="text-[13px] sm:text-[13.5px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed font-normal">
                   {rep.desc}
                 </CardDescription>
               </CardHeader>
@@ -106,7 +106,7 @@ export default function ReportsOverviewPage() {
                   variant="outline"
                   size="sm"
                   fullWidth
-                  className="justify-between group font-semibold text-xs sm:text-sm"
+                  className="justify-between group font-semibold"
                   rightIcon={
                     <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
                   }

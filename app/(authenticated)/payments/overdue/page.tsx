@@ -23,10 +23,10 @@ export default function OverduePaymentsPage() {
               <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Payments
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="page-title">
             Overdue Dues & Delinquency Recovery
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Accounts with missed payment deadlines requiring field recovery visits, reminder calls, and late penalty charges.
           </p>
         </div>

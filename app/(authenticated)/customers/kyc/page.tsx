@@ -24,11 +24,11 @@ export default function CustomerKycPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 flex items-center gap-2">
+          <h1 className="page-title flex items-center gap-2.5">
             <ShieldCheck className="w-6 h-6 text-brand-600 dark:text-brand-400" />
             Customer KYC & Regulatory Compliance
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="page-subtitle">
             Audit customer identity, address proofs, financial documentation, and risk categories before loan disbursement.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function CustomerKycPage() {
           <button
             key={tab.value}
             onClick={() => setSelectedStatus(tab.value)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+            className={`px-3.5 py-1.5 rounded-xl text-[13.5px] sm:text-[14px] font-semibold whitespace-nowrap transition-colors ${
               selectedStatus === tab.value
                 ? 'bg-brand-600 text-white'
                 : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'

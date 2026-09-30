@@ -64,9 +64,9 @@ export default function ChitDetailPage() {
                 {scheme.status}
               </Badge>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900">{scheme.schemeName}</h1>
+            <h1 className="page-title">{scheme.schemeName}</h1>
             {scheme.description && (
-              <p className="text-xs text-slate-500 mt-1 max-w-2xl">{scheme.description}</p>
+              <p className="page-subtitle max-w-2xl">{scheme.description}</p>
             )}
           </div>
 

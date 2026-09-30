@@ -51,7 +51,7 @@ export function MetricCard({
       <div>
         {/* Title row: full-width title + icon */}
         <div className="flex items-start justify-between gap-2">
-          <p className="text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider leading-snug flex-1 min-w-0 pr-1">
+          <p className="text-xs sm:text-[12.5px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider leading-snug flex-1 min-w-0 pr-1">
             {title}
           </p>
           <div
@@ -66,11 +66,11 @@ export function MetricCard({
         </div>
 
         <div className="mt-2">
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50 tabular-nums leading-tight">
+          <h3 className="text-2xl sm:text-[26px] font-bold tracking-tight text-slate-900 dark:text-slate-50 tabular-nums leading-tight">
             {value}
           </h3>
           {subtitle && (
-            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5 truncate">
+            <p className="text-[13px] font-medium text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5 truncate">
               {subtitle}
             </p>
           )}
@@ -78,10 +78,10 @@ export function MetricCard({
       </div>
 
       {change !== undefined && (
-        <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+        <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[13px]">
           <span
             className={cn(
-              'inline-flex items-center gap-1 font-semibold px-2 py-0.5 rounded-full text-[11px] shadow-2xs',
+              'inline-flex items-center gap-1 font-semibold px-2 py-0.5 rounded-full text-[11.5px] sm:text-[12px] shadow-2xs',
               isPositive
                 ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60'
                 : 'bg-rose-50 text-rose-700 dark:bg-rose-950/60 dark:text-rose-300 border border-rose-200/60 dark:border-rose-800/60'
@@ -94,7 +94,7 @@ export function MetricCard({
             )}
             <span>{Math.abs(change as number)}%</span>
           </span>
-          <span className="text-[11px] text-slate-400 dark:text-slate-500 font-medium truncate">
+          <span className="text-[12px] text-slate-400 dark:text-slate-500 font-medium truncate">
             {changePeriod}
           </span>
         </div>

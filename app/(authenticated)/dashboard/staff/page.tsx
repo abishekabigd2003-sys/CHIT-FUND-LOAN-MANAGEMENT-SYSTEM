@@ -69,7 +69,7 @@ export default function StaffDashboardPage() {
             </div>
 
             <div className="flex items-baseline gap-3 flex-wrap">
-              <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 font-feature-settings">
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 font-feature-settings">
                 Field Officer Dashboard
               </h1>
             </div>
@@ -87,9 +87,8 @@ export default function StaffDashboardPage() {
               href="/collections/my-tasks"
               variant="primary"
               size="sm"
-              className="gap-1.5 text-xs bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs font-semibold"
+              leftIcon={<UserCheck className="w-3.5 h-3.5 stroke-[1.8]" />}
             >
-              <UserCheck className="w-3.5 h-3.5" />
               <span>My Tasks ({myTasks.length})</span>
             </Button>
             <Button

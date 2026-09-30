@@ -78,7 +78,7 @@ export default function ReportsOverviewPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
           Executive Reports & Financial Audits
         </h1>
         <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -92,11 +92,11 @@ export default function ReportsOverviewPage() {
           return (
             <Card key={rep.title} className="hover:shadow-md transition-all duration-200 flex flex-col justify-between">
               <CardHeader className="pb-3">
-                <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3 ${rep.color}`}>
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 shadow-2xs ${rep.color}`}>
                   <Icon className="w-5 h-5 stroke-[1.8]" />
                 </div>
-                <CardTitle className="text-base">{rep.title}</CardTitle>
-                <CardDescription className="text-xs mt-1 leading-relaxed">
+                <CardTitle className="text-sm sm:text-base font-bold">{rep.title}</CardTitle>
+                <CardDescription className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed font-normal">
                   {rep.desc}
                 </CardDescription>
               </CardHeader>
@@ -106,9 +106,9 @@ export default function ReportsOverviewPage() {
                   variant="outline"
                   size="sm"
                   fullWidth
-                  className="justify-between group text-xs"
+                  className="justify-between group font-semibold text-xs sm:text-sm"
                   rightIcon={
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition-transform" />
                   }
                 >
                   Open Report

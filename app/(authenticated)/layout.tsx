@@ -10,6 +10,8 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs';
 import { AccessDenied } from '@/components/permissions/AccessDenied';
 import { checkRouteAccess } from '@/lib/permissions/permission-utils';
 import { Loader2 } from 'lucide-react';
+import { useQueryClient } from '@tanstack/react-query';
+import { prewarmCoreModules } from '@/lib/navigation-prefetch';
 
 export default function AuthenticatedLayout({
   children,
@@ -18,6 +20,7 @@ export default function AuthenticatedLayout({
 }) {
   const router = useRouter();
   const pathname = usePathname();
+  const queryClient = useQueryClient();
   const { isAuthenticated, isLoading: isAuthLoading } = useAuth();
   const { role, permissions, isLoading: isPermsLoading } = usePermissions();
 
@@ -35,7 +38,8 @@ export default function AuthenticatedLayout({
 
   useEffect(() => {
     setMounted(true);
-  }, []);
+    prewarmCoreModules(queryClient);
+  }, [queryClient]);
 
   useEffect(() => {
     if (mounted && !isAuthLoading && !isAuthenticated) {

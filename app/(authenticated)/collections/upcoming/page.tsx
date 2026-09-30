@@ -4,6 +4,7 @@ import React from 'react';
 import { useCollectionTasks } from '@/hooks/useCollections';
 import { CollectionTaskTable } from '@/components/collections/CollectionTaskTable';
 import { CreditCard, BellRing, CheckCircle, MessageSquare } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function UpcomingCollectionsPage() {
   const { data: tasks = [], isLoading } = useCollectionTasks();
@@ -23,13 +24,14 @@ export default function UpcomingCollectionsPage() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button
+          <Button
+            variant="primary"
+            size="sm"
             onClick={() => alert('Automated 7-day payment reminder broadcast queued for 12 accounts.')}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition-colors"
+            leftIcon={<MessageSquare className="w-4 h-4 stroke-[1.8]" />}
           >
-            <MessageSquare className="w-4 h-4" />
             Trigger WhatsApp Reminders
-          </button>
+          </Button>
         </div>
       </div>
 

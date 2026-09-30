@@ -23,6 +23,8 @@ import { usePermissions } from '@/hooks/usePermissions';
 import { cn } from '@/lib/utils';
 import { useNotifications } from '@/hooks/useNotifications';
 import { AppModule } from '@/lib/permissions/permissions';
+import { useQueryClient } from '@tanstack/react-query';
+import { prefetchModuleData } from '@/lib/navigation-prefetch';
 
 interface SidebarProps {
   isOpen?: boolean;
@@ -213,8 +215,8 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
   return (
     <div className="space-y-0.5">
       {showSectionHeader && (
-        <div className="pt-3.5 pb-1 px-3 first:pt-1">
-          <p className="text-[10px] font-bold tracking-wider text-slate-400 uppercase select-none">
+        <div className="pt-3 pb-1 px-3 first:pt-1">
+          <p className="text-[11px] font-bold tracking-wider text-slate-400 uppercase select-none">
             {item.section}
           </p>
         </div>
@@ -222,13 +224,14 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
 
       <Link
         href={item.href}
+        prefetch={true}
         onMouseEnter={() => onPrefetch(item.href)}
         onTouchStart={() => onPrefetch(item.href)}
         onClick={() => onClose && onClose()}
         className={cn(
-          'relative flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group select-none',
+          'relative flex items-center justify-between px-3 py-2 sm:py-2.5 rounded-xl text-sm font-medium transition-all group select-none',
           isParentActive
-            ? 'bg-gradient-to-r from-brand-600 to-brand-700 text-white font-semibold shadow-md shadow-brand-950/60'
+            ? 'bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-md shadow-brand-950/60 font-semibold'
             : 'text-slate-300 hover:bg-slate-800/70 hover:text-white'
         )}
       >
@@ -237,7 +240,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
           <span className="absolute left-0 top-2 bottom-2 w-1 bg-brand-300 rounded-r-full shadow-sm" />
         )}
 
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2.5 min-w-0">
           <Icon
             className={cn(
               'w-[18px] h-[18px] shrink-0 stroke-[1.8] transition-colors',
@@ -281,18 +284,19 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
 
       {/* Sub Menu Links */}
       {item.subItems && isParentActive && (
-        <div className="ml-7 pl-3 border-l-2 border-brand-500/30 space-y-1 py-1.5">
+        <div className="ml-7 pl-3 border-l-2 border-brand-500/30 space-y-1 py-1">
           {item.subItems.map((sub) => {
             const isSubActive = pathname === sub.href;
             return (
               <Link
                 key={sub.href}
                 href={sub.href}
+                prefetch={true}
                 onMouseEnter={() => onPrefetch(sub.href)}
                 onTouchStart={() => onPrefetch(sub.href)}
                 onClick={() => onClose && onClose()}
                 className={cn(
-                  'block py-1.5 px-3 rounded-lg text-xs font-medium transition-colors',
+                  'block py-1.5 px-3 rounded-lg text-xs sm:text-[13px] font-medium transition-colors',
                   isSubActive
                     ? 'text-brand-300 font-semibold bg-brand-950/60'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/40'
@@ -311,6 +315,7 @@ const SidebarNavGroup = React.memo(function SidebarNavGroup({
 export const Sidebar = React.memo(function Sidebar({ isOpen, onClose }: SidebarProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const queryClient = useQueryClient();
   const { role, canAccessModule, hasPermission } = usePermissions();
   const { data: notifications = [] } = useNotifications();
 
@@ -318,9 +323,10 @@ export const Sidebar = React.memo(function Sidebar({ isOpen, onClose }: SidebarP
     (href: string) => {
       try {
         router.prefetch(href);
+        prefetchModuleData(queryClient, href);
       } catch {}
     },
-    [router]
+    [router, queryClient]
   );
 
   const unreadCount = React.useMemo(

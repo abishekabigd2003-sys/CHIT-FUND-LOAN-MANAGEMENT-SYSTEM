@@ -18,6 +18,7 @@ import {
   FileCheck,
 } from 'lucide-react';
 import { PermissionGuard } from '@/components/permissions/PermissionGuard';
+import { Button } from '@/components/ui/Button';
 
 export default function ApprovalDetailPage() {
   const params = useParams();
@@ -75,28 +76,31 @@ export default function ApprovalDetailPage() {
 
         {approval.status === 'PENDING' && (
           <PermissionGuard anyPermissions={['approvals.approve', 'loans.approve']}>
-            <div className="flex items-center gap-2">
-              <button
+            <div className="flex items-center gap-2 flex-wrap">
+              <Button
+                variant="outline"
+                size="sm"
                 onClick={() => setDecisionAction('REQUEST_CHANGES')}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 text-xs font-semibold"
+                leftIcon={<AlertCircle className="w-4 h-4 text-amber-500 stroke-[1.8]" />}
               >
-                <AlertCircle className="w-4 h-4 text-amber-500" />
                 Request Changes
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="destructive"
+                size="sm"
                 onClick={() => setDecisionAction('REJECT')}
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg border border-rose-200 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 hover:bg-rose-100 text-xs font-semibold"
+                leftIcon={<XCircle className="w-4 h-4 stroke-[1.8]" />}
               >
-                <XCircle className="w-4 h-4" />
                 Reject
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="success"
+                size="sm"
                 onClick={() => setDecisionAction('APPROVE')}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-xs transition-colors"
+                leftIcon={<CheckCircle2 className="w-4 h-4 stroke-[2]" />}
               >
-                <CheckCircle2 className="w-4 h-4" />
                 Sanction & Approve
-              </button>
+              </Button>
             </div>
           </PermissionGuard>
         )}

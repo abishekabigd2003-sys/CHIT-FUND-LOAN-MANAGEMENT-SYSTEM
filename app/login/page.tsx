@@ -152,7 +152,7 @@ export default function LoginPage() {
               type="submit"
               variant="primary"
               size="lg"
-              className="w-full font-semibold text-sm h-11 gap-2 shadow-brand cursor-pointer"
+              className="w-full font-semibold text-sm h-11 gap-2 shadow-xs"
               isLoading={isLoading}
               rightIcon={<ArrowRight className="w-4 h-4 stroke-[2]" />}
             >

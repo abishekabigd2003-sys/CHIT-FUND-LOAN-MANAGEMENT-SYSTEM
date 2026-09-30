@@ -47,11 +47,11 @@ export function RecentActivitiesList({ activities }: { activities: ActivityItem[
       {activities.map((act) => (
         <div
           key={act.id}
-          className="relative flex items-start gap-3.5 p-2 rounded-xl transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-850/50 text-xs"
+          className="relative flex items-start gap-3.5 p-2 rounded-xl transition-colors hover:bg-slate-50/80 dark:hover:bg-slate-850/50"
         >
           <div
             className={cn(
-              'relative z-10 w-8 h-8 rounded-lg flex items-center justify-center shrink-0 border shadow-2xs mt-0.5',
+              'relative z-10 w-9 h-9 rounded-xl flex items-center justify-center shrink-0 border shadow-2xs mt-0.5',
               getBg(act.category)
             )}
           >
@@ -60,23 +60,23 @@ export function RecentActivitiesList({ activities }: { activities: ActivityItem[
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center justify-between gap-2">
-              <p className="font-semibold text-slate-800 dark:text-slate-200 text-xs truncate">
+              <p className="font-bold text-slate-850 dark:text-slate-150 text-sm truncate">
                 {act.action}
               </p>
-              <span className="text-[10px] text-slate-400 dark:text-slate-500 shrink-0 font-medium">
+              <span className="text-xs text-slate-400 dark:text-slate-500 shrink-0 font-medium">
                 {act.time}
               </span>
             </div>
 
-            <p className="text-slate-500 dark:text-slate-400 text-[11px] truncate mt-0.5">
+            <p className="text-slate-600 dark:text-slate-300 text-xs sm:text-[13px] truncate mt-0.5 font-medium">
               {act.target}
             </p>
 
-            <div className="flex items-center gap-1.5 mt-1">
-              <span className="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-2 mt-1.5">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                 {act.user}
               </span>
-              <span className="text-[9px] uppercase font-bold text-slate-400 tracking-wider">
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">
                 {act.category}
               </span>
             </div>

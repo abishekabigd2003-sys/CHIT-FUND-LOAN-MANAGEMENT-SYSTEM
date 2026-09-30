@@ -91,8 +91,8 @@ export function LoanProductSelector({
                 'group relative flex flex-col w-full text-left rounded-2xl overflow-hidden',
                 'bg-[#0b1329] border text-slate-100 transition-all duration-300 ease-out outline-none select-none',
                 isSelected
-                  ? 'border-brand-500 ring-2 ring-brand-500/40 shadow-[0_0_24px_rgba(113,50,176,0.45)] -translate-y-1'
-                  : 'border-slate-800/90 hover:border-brand-500/50 hover:shadow-[0_0_18px_rgba(113,50,176,0.25)] hover:-translate-y-0.5'
+                  ? 'border-brand-500 ring-2 ring-brand-500/30 shadow-sm -translate-y-0.5'
+                  : 'border-slate-800/90 hover:border-brand-500/50 hover:shadow-xs'
               )}
             >
               {/* Card Image Banner with Cinematic Gradient Overlay */}

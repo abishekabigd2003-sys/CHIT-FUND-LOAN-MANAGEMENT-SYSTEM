@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'success' | 'warning';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'destructive' | 'success' | 'warning' | 'soft';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'icon-xs' | 'icon-sm' | 'icon' | 'icon-lg';
 
 export interface ButtonStyleOptions {
@@ -20,34 +20,36 @@ export function buttonVariants({
   className,
 }: ButtonStyleOptions = {}) {
   const baseStyles =
-    'inline-flex items-center justify-center whitespace-nowrap font-semibold tracking-tight transition-all duration-150 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.985] cursor-pointer disabled:cursor-not-allowed';
+    'inline-flex items-center justify-center whitespace-nowrap font-medium tracking-tight transition-colors duration-150 select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-950 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.985] cursor-pointer disabled:cursor-not-allowed';
 
   const variants: Record<ButtonVariant, string> = {
     primary:
-      'bg-gradient-to-b from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 active:from-brand-700 active:to-brand-800 text-white shadow-xs shadow-brand-700/20 hover:shadow-brand border border-brand-500/30',
+      'bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-medium border border-brand-600 hover:border-brand-700 active:border-brand-800 shadow-2xs shadow-brand-700/20',
     secondary:
-      'bg-slate-100 dark:bg-slate-800/90 text-slate-800 dark:text-slate-100 hover:bg-slate-200/80 dark:hover:bg-slate-750 active:bg-slate-200 dark:active:bg-slate-700 border border-slate-200/80 dark:border-slate-700/70 shadow-2xs',
+      'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 border border-brand-200 dark:border-brand-800/80 hover:bg-brand-50/60 dark:hover:bg-brand-950/40 hover:text-brand-700 dark:hover:text-brand-300 hover:border-brand-300 dark:hover:border-brand-700 active:bg-brand-100 dark:active:bg-brand-900/60 shadow-2xs',
     outline:
-      'border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700 active:bg-slate-100 dark:active:bg-slate-800 shadow-2xs',
+      'border border-brand-200/90 dark:border-brand-800/70 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-brand-50/70 dark:hover:bg-brand-950/50 hover:text-brand-700 dark:hover:text-brand-300 hover:border-brand-400 dark:hover:border-brand-500 active:bg-brand-100 dark:active:bg-brand-900/60 shadow-2xs',
+    soft:
+      'bg-brand-50 hover:bg-brand-100 active:bg-brand-200 dark:bg-brand-950/60 dark:hover:bg-brand-900/60 dark:active:bg-brand-900 text-brand-700 dark:text-brand-300 border border-brand-200/80 dark:border-brand-800/80 shadow-2xs',
     ghost:
-      'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 hover:text-slate-900 dark:hover:text-slate-100 active:bg-slate-200 dark:active:bg-slate-700/60 border border-transparent',
+      'text-slate-600 dark:text-slate-400 hover:bg-brand-50/60 dark:hover:bg-brand-950/40 hover:text-brand-700 dark:hover:text-brand-300 active:bg-brand-100 dark:active:bg-brand-900/50 border border-transparent',
     destructive:
-      'bg-gradient-to-b from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 active:from-rose-700 active:to-rose-800 text-white shadow-xs shadow-rose-700/20 border border-rose-500/30',
+      'bg-rose-600 hover:bg-rose-700 active:bg-rose-800 text-white border border-rose-600 hover:border-rose-700 active:border-rose-800 shadow-2xs shadow-rose-700/20',
     success:
-      'bg-gradient-to-b from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 active:from-emerald-700 active:to-emerald-800 text-white shadow-xs shadow-emerald-700/20 border border-emerald-500/30',
+      'bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white border border-emerald-600 hover:border-emerald-700 active:border-emerald-800 shadow-2xs shadow-emerald-700/20',
     warning:
-      'bg-gradient-to-b from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 active:from-amber-700 active:to-amber-800 text-white shadow-xs shadow-amber-700/20 border border-amber-500/30',
+      'bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white border border-brand-600 hover:border-brand-700 active:border-brand-800 shadow-2xs shadow-brand-700/20',
   };
 
   const sizes: Record<ButtonSize, string> = {
-    xs: 'h-8 px-2.5 text-xs font-semibold rounded-lg gap-1.5 min-h-[32px]',
-    sm: 'h-9 px-3.5 text-xs font-semibold rounded-xl gap-1.5 min-h-[36px]',
-    md: 'h-10 px-4 text-sm font-semibold rounded-xl gap-2 min-h-[40px]',
-    lg: 'h-11 px-5 text-sm sm:text-base font-semibold rounded-xl gap-2.5 min-h-[44px]',
-    'icon-xs': 'h-7 w-7 p-0 rounded-md shrink-0 flex items-center justify-center',
-    'icon-sm': 'h-8 w-8 p-0 rounded-lg shrink-0 flex items-center justify-center',
-    icon: 'h-9 w-9 p-0 rounded-xl shrink-0 flex items-center justify-center',
-    'icon-lg': 'h-10 w-10 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    xs: 'h-7.5 px-2.5 text-xs font-medium rounded-lg gap-1 min-h-[30px]',
+    sm: 'h-8.5 px-3 text-xs sm:text-sm font-medium rounded-xl gap-1.5 min-h-[34px]',
+    md: 'h-9.5 px-4 text-xs sm:text-sm font-semibold rounded-xl gap-2 min-h-[38px]',
+    lg: 'h-10.5 px-5 text-sm sm:text-base font-semibold rounded-xl gap-2.5 min-h-[42px]',
+    'icon-xs': 'h-7.5 w-7.5 p-0 rounded-lg shrink-0 flex items-center justify-center',
+    'icon-sm': 'h-8.5 w-8.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    icon: 'h-9.5 w-9.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
+    'icon-lg': 'h-10.5 w-10.5 p-0 rounded-xl shrink-0 flex items-center justify-center',
   };
 
   return cn(

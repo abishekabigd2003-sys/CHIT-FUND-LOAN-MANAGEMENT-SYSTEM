@@ -7,6 +7,7 @@ import { useAssessments } from '@/hooks/useAssessment';
 import { AssessmentListTable } from '@/components/assessments/AssessmentListTable';
 import { Plus, Filter, ClipboardCheck, ArrowUpRight } from 'lucide-react';
 import { PermissionGuard } from '@/components/permissions/PermissionGuard';
+import { Button } from '@/components/ui/Button';
 
 export default function AssessmentsPage() {
   const searchParams = useSearchParams();
@@ -40,13 +41,14 @@ export default function AssessmentsPage() {
         </div>
 
         <PermissionGuard permission="assessments.create">
-          <Link
+          <Button
             href="/assessments/new"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-600 text-white text-xs font-semibold hover:bg-brand-700 transition-colors shadow-sm shadow-brand-600/20"
+            variant="primary"
+            size="sm"
+            leftIcon={<Plus className="w-4 h-4 stroke-[2]" />}
           >
-            <Plus className="w-4 h-4" />
             New Loan Assessment
-          </Link>
+          </Button>
         </PermissionGuard>
       </div>
 

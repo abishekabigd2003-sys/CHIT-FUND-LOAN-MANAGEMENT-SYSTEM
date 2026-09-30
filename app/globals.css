@@ -13,17 +13,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Brand Jewel Violet (#7132B0) */
-    --primary: 270 56% 44.3%;
+    /* Brand Premium Purple (#7C3AED) */
+    --primary: 262.1 83.3% 57.8%;
     --primary-foreground: 0 0% 100%;
 
-    --color-primary: #7132B0;
-    --color-primary-dark: #5D2693;
-    --color-primary-light: #8E44DB;
-    --color-primary-soft: #FAF5FF;
-    --color-primary-border: #E4D0F8;
-    --color-primary-hover: #5D2693;
-    --color-primary-active: #4A1C77;
+    --color-primary: #7C3AED;
+    --color-primary-dark: #6D28D9;
+    --color-primary-light: #8B5CF6;
+    --color-primary-soft: #F5F3FF;
+    --color-primary-border: #DDD6FE;
+    --color-primary-hover: #6D28D9;
+    --color-primary-active: #5B21B6;
     --color-background: #F8FAFC;
     --color-surface: #FFFFFF;
     --color-border: #E2E8F0;
@@ -102,10 +102,12 @@
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   body {
-    @apply bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 antialiased font-sans transition-colors duration-150;
-    letter-spacing: -0.012em;
+    @apply bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 antialiased font-sans text-sm transition-colors duration-150;
+    line-height: 1.5;
+    letter-spacing: -0.011em;
   }
   ::selection {
     background-color: #f3e8ff;
@@ -133,11 +135,17 @@
 
 /* Smooth page-level content fade-in */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(4px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .animate-page-in {
-  animation: fadeInUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeInUp 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes indeterminate {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(100%); }
+  100% { transform: translateX(300%); }
 }
 
 /* Custom Scrollbar for sleek fintech feel */

@@ -291,22 +291,24 @@ export function PermissionMatrix({ role, onSave, isSaving = false }: PermissionM
         <div className="flex items-center gap-2 flex-wrap">
           {!isAdminRole && (
             <>
-              <button
+              <Button
                 type="button"
+                variant="outline"
+                size="xs"
                 onClick={handleSelectAll}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-semibold transition-colors shadow-2xs"
+                leftIcon={<CheckSquare className="w-3.5 h-3.5 text-brand-500 dark:text-brand-400 stroke-[1.8]" />}
               >
-                <CheckSquare className="w-3.5 h-3.5 text-brand-500 dark:text-brand-400" />
-                <span>Select All</span>
-              </button>
-              <button
+                Select All
+              </Button>
+              <Button
                 type="button"
+                variant="outline"
+                size="xs"
                 onClick={handleClearAll}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-850 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white text-xs font-semibold transition-colors shadow-2xs"
+                leftIcon={<Square className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 stroke-[1.8]" />}
               >
-                <Square className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500" />
-                <span>Clear All</span>
-              </button>
+                Clear All
+              </Button>
             </>
           )}
 

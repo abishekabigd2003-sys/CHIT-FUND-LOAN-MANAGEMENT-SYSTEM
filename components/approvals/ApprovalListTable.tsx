@@ -71,55 +71,55 @@ export function ApprovalListTable({ approvals, isLoading }: ApprovalListTablePro
     <div className="overflow-x-auto rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-[#0f172a] shadow-fintech scrollbar-none">
       <table className="w-full text-left border-collapse text-sm">
         <thead>
-          <tr className="border-b border-slate-200/90 dark:border-slate-800/80 bg-slate-50/75 dark:bg-[#0d1527]/75 text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-[11px]">
-            <th className="py-3.5 px-4 whitespace-nowrap">Request Ref</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Borrower</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Loan / Proposal</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Credit / FOIR</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">KYC Risk</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Submitted By</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Status</th>
-            <th className="py-3.5 px-4 text-right whitespace-nowrap">Action</th>
+          <tr className="border-b border-slate-200/90 dark:border-slate-800/80 bg-slate-50/75 dark:bg-[#0d1527]/75 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">
+            <th className="py-3 px-3.5 whitespace-nowrap">Request Ref</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Borrower</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Loan / Proposal</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Credit / FOIR</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">KYC Risk</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Submitted By</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Status</th>
+            <th className="py-3 px-3.5 text-right whitespace-nowrap">Action</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-medium">
+        <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-normal">
           {approvals.map((req) => (
             <tr key={req.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
-              <td className="py-3.5 px-4 font-mono font-bold text-brand-600 dark:text-brand-400 text-sm">
-                <Link href={`/approvals/${req.id}`} className="hover:underline">
+              <td className="py-3 px-3.5 font-mono font-semibold text-brand-600 dark:text-brand-400 text-sm">
+                <Link href={`/approvals/${req.id}`} prefetch={true} className="hover:underline">
                   {req.approvalNumber}
                 </Link>
-                <div className="text-xs text-slate-400 dark:text-slate-500 font-normal font-sans mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-slate-400 font-normal font-sans mt-0.5">
                   {formatDate(req.createdAt)}
                 </div>
               </td>
 
-              <td className="py-3.5 px-4">
-                <div className="font-bold text-slate-900 dark:text-slate-100 text-sm">{req.customerName}</div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{req.customerPhone}</div>
+              <td className="py-3 px-3.5">
+                <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">{req.customerName}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">{req.customerPhone}</div>
               </td>
 
-              <td className="py-3.5 px-4">
-                <div className="font-bold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
+              <td className="py-3 px-3.5">
+                <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
                   {formatCurrency(req.requestedAmount)}
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">
                   {req.loanType} • {req.tenureMonths} Mos
                 </div>
               </td>
 
-              <td className="py-3.5 px-4">
-                <div className="font-bold text-slate-800 dark:text-slate-200 text-sm tabular-nums">
+              <td className="py-3 px-3.5">
+                <div className="font-medium text-slate-800 dark:text-slate-200 text-sm tabular-nums">
                   Score: {req.assessmentSummary.creditScore}
                 </div>
-                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">
                   FOIR: {req.assessmentSummary.foir}% ({req.assessmentSummary.riskBand})
                 </div>
               </td>
 
-              <td className="py-3.5 px-4">
+              <td className="py-3 px-3.5">
                 <span
-                  className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${
+                  className={`px-2 py-0.5 rounded-full text-[11px] font-semibold border ${
                     req.kycSummary.riskCategory === 'LOW'
                       ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border-emerald-200/60 dark:border-emerald-800/60'
                       : req.kycSummary.riskCategory === 'MEDIUM'
@@ -129,25 +129,25 @@ export function ApprovalListTable({ approvals, isLoading }: ApprovalListTablePro
                 >
                   {req.kycSummary.riskCategory} RISK
                 </span>
-                <div className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">
                   {req.kycSummary.verifiedDocsCount}/{req.kycSummary.totalDocsCount} Docs Verified
                 </div>
               </td>
 
-              <td className="py-3.5 px-4">
+              <td className="py-3 px-3.5">
                 <div className="text-slate-700 dark:text-slate-300 font-medium text-sm">{req.submittedBy.name}</div>
-                <div className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">{req.submittedBy.role}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">{req.submittedBy.role}</div>
               </td>
 
-              <td className="py-3.5 px-4">{getStatusBadge(req.status)}</td>
+              <td className="py-3 px-3.5">{getStatusBadge(req.status)}</td>
 
-              <td className="py-3.5 px-4 text-right">
+              <td className="py-3 px-3.5 text-right">
                 <Button
                   href={`/approvals/${req.id}`}
                   variant="primary"
                   size="xs"
                   leftIcon={<Eye className="w-3.5 h-3.5 stroke-[1.8]" />}
-                  className="font-semibold shadow-2xs"
+                  className="font-medium shadow-2xs"
                 >
                   Review & Sign
                 </Button>

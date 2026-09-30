@@ -60,22 +60,22 @@ export function CustomerListTable({ customers }: CustomerListTableProps) {
                     <Link
                       href={`/customers/${c.id}`}
                       prefetch={true}
-                      className="font-bold text-slate-900 dark:text-slate-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm hover:underline block truncate"
+                      className="font-semibold text-slate-900 dark:text-slate-100 hover:text-brand-600 dark:hover:text-brand-400 transition-colors text-sm hover:underline block truncate"
                     >
                       {c.firstName} {c.lastName}
                     </Link>
-                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block">{c.customerCode}</span>
+                    <span className="text-xs font-mono text-slate-500 dark:text-slate-400 block mt-0.5">{c.customerCode}</span>
                   </div>
                 </div>
               </TableCell>
 
               <TableCell>
-                <div className="text-sm space-y-1">
+                <div className="space-y-1">
                   <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-200 font-medium text-xs">
                     <Phone className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 stroke-[1.8] shrink-0" />
                     <span>{c.phone}</span>
                   </div>
-                  <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-xs">
+                  <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 text-xs font-normal">
                     <Mail className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 stroke-[1.8] shrink-0" />
                     <span className="truncate max-w-[140px]">{c.email}</span>
                   </div>
@@ -83,36 +83,36 @@ export function CustomerListTable({ customers }: CustomerListTableProps) {
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <div className="text-sm">
-                  <p className="font-semibold text-slate-800 dark:text-slate-200 text-xs">{c.address.city}</p>
-                  <p className="text-slate-500 dark:text-slate-400 text-[11px] mt-0.5">{c.address.state}</p>
+                <div>
+                  <p className="font-semibold text-slate-800 dark:text-slate-200 text-xs sm:text-sm">{c.address.city}</p>
+                  <p className="text-slate-500 dark:text-slate-400 text-xs mt-0.5 font-normal">{c.address.state}</p>
                 </div>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">{getStatusBadge(c.status)}</TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="font-bold text-slate-900 dark:text-slate-100 text-sm tabular-nums">{c.stats?.activeChits || 0}</span>
-                <span className="text-slate-500 dark:text-slate-400 text-xs ml-1.5 font-medium">schemes</span>
+                <span className="font-semibold text-slate-900 dark:text-slate-100 text-sm tabular-nums">{c.stats?.activeChits || 0}</span>
+                <span className="text-slate-500 dark:text-slate-400 text-xs ml-1 font-normal">schemes</span>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="font-bold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
+                <span className="font-semibold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
                   {formatCurrency(c.stats?.totalLoanOutstanding || 0)}
                 </span>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">{formatDate(c.createdAt)}</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400 font-normal">{formatDate(c.createdAt)}</span>
               </TableCell>
 
               <TableCell className="text-right whitespace-nowrap">
                 <Button
                   href={`/customers/${c.id}`}
-                  variant="ghost"
+                  variant="outline"
                   size="xs"
-                  leftIcon={<Eye className="w-4 h-4 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
-                  rightIcon={<ChevronRight className="w-3.5 h-3.5 opacity-60 stroke-[2]" />}
+                  leftIcon={<Eye className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
+                  rightIcon={<ChevronRight className="w-3 h-3 opacity-60 stroke-[2]" />}
                 >
                   View Profile
                 </Button>

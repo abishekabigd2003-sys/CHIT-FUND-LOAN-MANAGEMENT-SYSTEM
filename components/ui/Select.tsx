@@ -22,7 +22,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full space-y-1.5 text-left">
         {label && (
-          <label htmlFor={selectId} className="block text-xs font-semibold text-slate-700 dark:text-slate-300 tracking-tight">
+          <label htmlFor={selectId} className="block text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 tracking-tight">
             {label}
             {props.required && <span className="text-rose-500 ml-1 font-bold">*</span>}
           </label>
@@ -32,7 +32,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             id={selectId}
             ref={ref}
             className={cn(
-              'block w-full h-10 appearance-none rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] px-3.5 py-2 pr-10 text-sm text-slate-900 dark:text-slate-100',
+              'block w-full h-9 sm:h-10 appearance-none rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f172a] px-3.5 py-2 pr-10 text-sm text-slate-900 dark:text-slate-100',
               'transition-all duration-150',
               'hover:border-slate-300 dark:hover:border-slate-700',
               'focus:border-brand-500 dark:focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 dark:focus:ring-brand-400/25',
@@ -58,12 +58,12 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           </div>
         </div>
         {error ? (
-          <p className="text-[11px] text-rose-600 dark:text-rose-400 font-medium flex items-center gap-1 mt-1">
+          <p className="text-xs text-rose-600 dark:text-rose-400 font-medium flex items-center gap-1 mt-1">
             <AlertCircle className="w-3.5 h-3.5 shrink-0 stroke-[2]" />
             <span>{error}</span>
           </p>
         ) : helperText ? (
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">{helperText}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 font-medium">{helperText}</p>
         ) : null}
       </div>
     );

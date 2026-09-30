@@ -84,7 +84,7 @@ export default function ManagementDashboardPage() {
             <span className="text-xs text-slate-400 font-medium">• Portfolio Governance & Reporting</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Management Operations Overview
           </h1>
 

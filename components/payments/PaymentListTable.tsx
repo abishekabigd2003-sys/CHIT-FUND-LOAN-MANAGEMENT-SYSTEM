@@ -122,10 +122,10 @@ export function PaymentListTable({ payments, onRecordPayment }: PaymentListTable
                   </Button>
                 ) : (
                   <Button
-                    variant="ghost"
+                    variant="outline"
                     size="xs"
                     onClick={() => window.print()}
-                    leftIcon={<Receipt className="w-3.5 h-3.5 stroke-[1.8]" />}
+                    leftIcon={<Receipt className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
                     title="Print Receipt"
                   >
                     Receipt

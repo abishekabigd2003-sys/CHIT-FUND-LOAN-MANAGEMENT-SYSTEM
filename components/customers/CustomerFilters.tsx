@@ -28,12 +28,12 @@ export function CustomerFilters({
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Search by name, phone, customer code (CUST-), or email..."
           startIcon={<Search className="w-4 h-4" />}
-          className="h-9.5 text-xs"
+          className="h-9 sm:h-10 text-sm"
         />
       </div>
 
       <div className="flex items-center gap-2.5 w-full sm:w-auto">
-        <div className="flex-1 sm:w-44">
+        <div className="flex-1 sm:w-48">
           <Select
             value={status}
             onChange={(e) => onStatusChange(e.target.value)}
@@ -43,13 +43,13 @@ export function CustomerFilters({
               { label: 'Pending KYC', value: 'PENDING' },
               { label: 'Suspended', value: 'SUSPENDED' },
             ]}
-            className="h-9.5 text-xs py-1"
+            className="h-9 sm:h-10 text-sm"
           />
         </div>
 
         {(search || (status && status !== 'ALL')) && (
-          <Button variant="ghost" size="sm" onClick={onReset} className="h-9.5 px-2.5 text-xs text-slate-500 hover:text-slate-800 dark:hover:text-slate-200 shrink-0">
-            <RotateCcw className="w-3.5 h-3.5 mr-1" />
+          <Button variant="ghost" size="sm" onClick={onReset} className="font-semibold text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100 shrink-0">
+            <RotateCcw className="w-4 h-4 mr-1.5" />
             Reset
           </Button>
         )}

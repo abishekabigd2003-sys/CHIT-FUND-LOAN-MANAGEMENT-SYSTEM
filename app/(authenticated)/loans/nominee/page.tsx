@@ -19,21 +19,21 @@ export default function NomineeLoansPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Link href="/loans" className="text-slate-400 hover:text-slate-600 text-xs flex items-center">
-              <ArrowLeft className="w-3.5 h-3.5 mr-1" /> Loans
+            <Link href="/loans" prefetch={true} className="text-slate-400 hover:text-slate-600 text-sm font-medium flex items-center">
+              <ArrowLeft className="w-4 h-4 mr-1" /> Loans
             </Link>
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Nominee Co-Applicant Loans
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Credit lines secured with registered nominee co-signers and family beneficiary pledges.
           </p>
         </div>
 
-        <Link href="/loans/new">
-          <Button variant="primary" size="sm" className="gap-1.5 text-xs shadow-2xs">
-            <PlusCircle className="w-3.5 h-3.5" />
+        <Link href="/loans/new" prefetch={true}>
+          <Button variant="primary" size="sm" className="gap-2 shadow-2xs">
+            <PlusCircle className="w-4 h-4" />
             <span>New Nominee Loan</span>
           </Button>
         </Link>

@@ -202,7 +202,7 @@ export default function SettingsPage() {
                         type="button"
                         onClick={() => handleThemeChange(opt.id)}
                         className={cn(
-                          'relative flex flex-col p-3 rounded-lg border text-left transition-all text-xs',
+                          'relative flex flex-col p-3 rounded-lg border text-left transition-all text-xs cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/40',
                           isSelected
                             ? 'border-brand-600 ring-2 ring-brand-600/20 bg-brand-50/30 dark:bg-brand-950/30'
                             : 'border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-white dark:bg-slate-900'

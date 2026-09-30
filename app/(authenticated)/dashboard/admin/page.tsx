@@ -80,7 +80,7 @@ export default function AdminDashboardPage() {
             <span className="text-xs text-slate-400 font-medium">• Root Administrative Authority</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Executive Owner Dashboard
           </h1>
 
@@ -107,7 +107,6 @@ export default function AdminDashboardPage() {
               variant="primary"
               size="sm"
               leftIcon={<ShieldCheck className="w-3.5 h-3.5 stroke-[2]" />}
-              className="bg-amber-600 hover:bg-amber-500 shadow-sm"
             >
               Sanctions Queue ({approvals.length})
             </Button>
@@ -126,7 +125,7 @@ export default function AdminDashboardPage() {
             href="/loans/new"
             variant="outline"
             size="sm"
-            leftIcon={<FilePlus className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 stroke-[1.8]" />}
+            leftIcon={<FilePlus className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
           >
             Disburse Loan
           </Button>
@@ -144,19 +143,19 @@ export default function AdminDashboardPage() {
 
       {/* Owner Approvals Alert Banner */}
       {approvals.length > 0 && (
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-300/80 dark:border-amber-800/80 p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-500/10 via-brand-500/5 to-transparent border border-brand-200 dark:border-brand-800/80 p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-3.5 min-w-0">
-            <div className="w-11 h-11 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-amber-500/25">
+            <div className="w-11 h-11 rounded-xl bg-brand-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-600/25">
               <ShieldCheck className="w-6 h-6 stroke-[2]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping shrink-0" />
-                <h4 className="text-sm sm:text-base font-bold text-amber-950 dark:text-amber-100">
+                <span className="w-2 h-2 rounded-full bg-brand-500 animate-ping shrink-0" />
+                <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100">
                   {approvals.length} Loan Assessments Require Executive Owner Sanction
                 </h4>
               </div>
-              <p className="text-xs sm:text-sm text-amber-800/90 dark:text-amber-300/90 mt-0.5 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5 leading-relaxed">
                 Appraisal officers have verified customer eligibility, collateral valuation, and FOIR metrics.
               </p>
             </div>
@@ -166,7 +165,7 @@ export default function AdminDashboardPage() {
             href="/approvals"
             variant="primary"
             size="sm"
-            className="bg-amber-600 hover:bg-amber-500 text-white font-semibold shadow-sm shrink-0 self-start sm:self-auto"
+            className="shrink-0 self-start sm:self-auto font-semibold"
           >
             Review Sanctions →
           </Button>

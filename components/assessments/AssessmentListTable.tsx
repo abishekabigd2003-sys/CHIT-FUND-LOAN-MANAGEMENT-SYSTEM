@@ -80,59 +80,58 @@ export function AssessmentListTable({ assessments, isLoading }: AssessmentListTa
 
   return (
     <div className="overflow-x-auto rounded-2xl border border-slate-200/90 dark:border-slate-800/80 bg-white dark:bg-[#0f172a] shadow-fintech scrollbar-none">
-      <table className="w-full text-left border-collapse text-xs">
+      <table className="w-full text-left border-collapse text-sm">
         <thead>
-          <tr className="border-b border-slate-200/90 dark:border-slate-800/80 bg-slate-50/75 dark:bg-[#0d1527]/75 text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider text-[11px]">
-            <th className="py-3.5 px-4 whitespace-nowrap">Assessment ID</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Customer</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Loan Type</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Requested Amt</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">CIBIL / FOIR</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Status</th>
-            <th className="py-3.5 px-4 whitespace-nowrap">Assessor</th>
-            <th className="py-3.5 px-4 text-right whitespace-nowrap">Actions</th>
+          <tr className="border-b border-slate-200/90 dark:border-slate-800/80 bg-slate-50/75 dark:bg-[#0d1527]/75 text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider text-xs">
+            <th className="py-3 px-3.5 whitespace-nowrap">Assessment ID</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Customer</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Loan Type</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Requested Amt</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">CIBIL / FOIR</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Status</th>
+            <th className="py-3 px-3.5 whitespace-nowrap">Assessor</th>
+            <th className="py-3 px-3.5 text-right whitespace-nowrap">Actions</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-medium">
+        <tbody className="divide-y divide-slate-100 dark:divide-slate-800/80 font-normal">
           {assessments.map((a) => (
             <tr key={a.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/40 transition-colors">
-              <td className="py-3.5 px-4 whitespace-nowrap">
-                <Link href={`/assessments/${a.id}`} className="font-bold text-brand-600 dark:text-brand-400 hover:underline font-mono">
+              <td className="py-3 px-3.5 whitespace-nowrap">
+                <Link href={`/assessments/${a.id}`} prefetch={true} className="font-semibold text-brand-600 dark:text-brand-400 hover:underline font-mono text-sm">
                   {a.assessmentNumber}
                 </Link>
-                <div className="text-[10px] text-slate-400 dark:text-slate-500 font-sans mt-0.5">{formatDate(a.createdAt)}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 font-normal font-sans mt-0.5">{formatDate(a.createdAt)}</div>
               </td>
-              <td className="py-3.5 px-4">
-                <div className="font-bold text-slate-900 dark:text-slate-100">{a.customerName}</div>
-                <div className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5 whitespace-nowrap">{a.customerPhone}</div>
+              <td className="py-3 px-3.5">
+                <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">{a.customerName}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal whitespace-nowrap">{a.customerPhone}</div>
               </td>
-              <td className="py-3.5 px-4 whitespace-nowrap">
-                <Badge variant="outline" className="font-semibold text-[11px]">
+              <td className="py-3 px-3.5 whitespace-nowrap">
+                <Badge variant="outline" className="font-medium text-xs">
                   {a.loanType}
                 </Badge>
               </td>
-              <td className="py-3.5 px-4 font-bold text-slate-900 dark:text-slate-100 whitespace-nowrap">
-                <span className="tabular-nums font-mono">{formatCurrency(a.requestedAmount)}</span>
-                <div className="text-[10px] font-normal text-slate-400 dark:text-slate-500 mt-0.5">{a.requestedTenureMonths} Mos Tenure</div>
+              <td className="py-3 px-3.5 font-semibold text-slate-900 dark:text-slate-100 whitespace-nowrap">
+                <span className="tabular-nums font-mono text-sm">{formatCurrency(a.requestedAmount)}</span>
+                <div className="text-xs font-normal text-slate-500 dark:text-slate-400 mt-0.5">{a.requestedTenureMonths} Mos Tenure</div>
               </td>
-              <td className="py-3.5 px-4 whitespace-nowrap">
+              <td className="py-3 px-3.5 whitespace-nowrap">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-bold text-slate-800 dark:text-slate-200 font-mono">{a.creditDetails.score}</span>
-                  <span className="text-[10px] text-slate-400 dark:text-slate-500 font-normal">({a.creditDetails.riskBand})</span>
+                  <span className="font-medium text-slate-800 dark:text-slate-200 font-mono text-sm">{a.creditDetails.score}</span>
+                  <span className="text-xs text-slate-400 dark:text-slate-500 font-normal">({a.creditDetails.riskBand})</span>
                 </div>
-                <div className="text-[10px] text-slate-500 dark:text-slate-400 font-medium mt-0.5">FOIR: {a.eligibility.foir}%</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">FOIR: {a.eligibility.foir}%</div>
               </td>
-              <td className="py-3.5 px-4 whitespace-nowrap">{getStatusBadge(a.status)}</td>
-              <td className="py-3.5 px-4 text-slate-600 dark:text-slate-300 whitespace-nowrap">
-                <div className="truncate max-w-[140px] font-medium">{a.assessorName}</div>
+              <td className="py-3 px-3.5 whitespace-nowrap">{getStatusBadge(a.status)}</td>
+              <td className="py-3 px-3.5 text-slate-700 dark:text-slate-300 whitespace-nowrap">
+                <div className="truncate max-w-[140px] font-medium text-sm">{a.assessorName}</div>
               </td>
-              <td className="py-3.5 px-4 text-right whitespace-nowrap">
+              <td className="py-3 px-3.5 text-right whitespace-nowrap">
                 <Button
                   href={`/assessments/${a.id}`}
-                  variant="ghost"
+                  variant="outline"
                   size="xs"
                   leftIcon={<Eye className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
-                  className="font-semibold"
                 >
                   View
                 </Button>

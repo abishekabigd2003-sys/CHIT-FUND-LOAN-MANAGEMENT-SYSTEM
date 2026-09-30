@@ -35,18 +35,18 @@ export default function PaymentsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Payment Management & Collections
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Log cash, UPI, and bank collections for Chit Fund subscriptions and Loan EMIs.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Link href="/payments/schedule">
-            <Button variant="outline" size="sm" className="gap-1.5 text-xs">
-              <Calendar className="w-3.5 h-3.5" />
+        <div className="flex items-center gap-2.5">
+          <Link href="/payments/schedule" prefetch={true}>
+            <Button variant="outline" size="sm" className="gap-2">
+              <Calendar className="w-4 h-4" />
               <span>Calendar View</span>
             </Button>
           </Link>
@@ -57,9 +57,9 @@ export default function PaymentsPage() {
               setActivePaymentForCollection(null);
               setIsRecordModalOpen(true);
             }}
-            className="gap-1.5 text-xs shadow-2xs"
+            className="gap-2 shadow-2xs"
           >
-            <Receipt className="w-3.5 h-3.5" />
+            <Receipt className="w-4 h-4" />
             <span>Record Payment</span>
           </Button>
         </div>

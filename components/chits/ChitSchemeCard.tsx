@@ -31,46 +31,46 @@ export function ChitSchemeCard({ scheme }: { scheme: ChitScheme }) {
         <div className="p-5 border-b border-slate-100 dark:border-slate-800 flex items-start justify-between gap-3">
           <div>
             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
-              <span className="font-mono text-xs font-bold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/80 px-2.5 py-0.5 rounded-md border border-brand-200/80 dark:border-brand-800/80">
+              <span className="font-mono text-xs font-semibold text-brand-700 dark:text-brand-300 bg-brand-50 dark:bg-brand-950/80 px-2 py-0.5 rounded-md border border-brand-200/80 dark:border-brand-800/80">
                 {scheme.schemeCode}
               </span>
               {getStatusBadge()}
             </div>
-            <h3 className="font-bold text-slate-900 dark:text-slate-100 text-lg leading-snug">
+            <h3 className="font-bold text-slate-900 dark:text-slate-100 text-base leading-snug">
               {scheme.schemeName}
             </h3>
           </div>
 
-          <div className="w-11 h-11 rounded-2xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 border border-brand-200/60 dark:border-brand-800/60 flex items-center justify-center shrink-0 shadow-2xs">
-            <Landmark className="w-5 h-5 stroke-[1.8]" />
+          <div className="w-10 h-10 rounded-2xl bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 border border-brand-200/60 dark:border-brand-800/60 flex items-center justify-center shrink-0 shadow-2xs">
+            <Landmark className="w-4.5 h-4.5 stroke-[1.8]" />
           </div>
         </div>
 
         {/* Financial Highlights */}
         <div className="p-5 space-y-4">
           <div className="grid grid-cols-2 gap-3 text-xs">
-            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold block uppercase tracking-wider">Chit Value</span>
-              <span className="text-lg font-extrabold text-slate-900 dark:text-slate-100 tabular-nums mt-0.5 block">
+              <span className="text-lg sm:text-xl font-bold text-slate-900 dark:text-slate-100 tabular-nums mt-0.5 block">
                 {formatCurrency(scheme.totalValue)}
               </span>
             </div>
-            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
+            <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-850/60 border border-slate-100 dark:border-slate-800">
               <span className="text-slate-500 dark:text-slate-400 text-xs font-semibold block uppercase tracking-wider">Monthly Due</span>
-              <span className="text-lg font-extrabold text-brand-600 dark:text-brand-400 tabular-nums mt-0.5 block">
+              <span className="text-lg sm:text-xl font-bold text-brand-600 dark:text-brand-400 tabular-nums mt-0.5 block">
                 {formatCurrency(scheme.monthlyContribution)}
               </span>
             </div>
           </div>
 
           {/* Members Enrollment Progress */}
-          <div className="space-y-1.5 text-sm">
-            <div className="flex items-center justify-between text-slate-600 dark:text-slate-300 font-medium">
-              <span className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-slate-400 stroke-[1.8]" />
+          <div className="space-y-1.5 text-xs sm:text-sm">
+            <div className="flex items-center justify-between text-slate-700 dark:text-slate-200 font-medium">
+              <span className="flex items-center gap-1.5">
+                <Users className="w-3.5 h-3.5 text-slate-400 stroke-[1.8]" />
                 <span>Members Enrolled</span>
               </span>
-              <span className="font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+              <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">
                 {scheme.enrolledMembersCount} / {scheme.totalMembers} ({enrollmentPct}%)
               </span>
             </div>
@@ -84,13 +84,13 @@ export function ChitSchemeCard({ scheme }: { scheme: ChitScheme }) {
 
           {/* Auction Progress */}
           {scheme.status === 'ACTIVE' && (
-            <div className="space-y-1.5 text-sm pt-2 border-t border-slate-100 dark:border-slate-800">
-              <div className="flex items-center justify-between text-slate-600 dark:text-slate-300 font-medium">
-                <span className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-slate-400 stroke-[1.8]" />
+            <div className="space-y-1.5 text-xs sm:text-sm pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-between text-slate-700 dark:text-slate-200 font-medium">
+                <span className="flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-slate-400 stroke-[1.8]" />
                   <span>Cycle Progress</span>
                 </span>
-                <span className="font-bold text-slate-900 dark:text-slate-100 tabular-nums">
+                <span className="font-semibold text-slate-900 dark:text-slate-100 tabular-nums">
                   Month {scheme.currentMonth} of {scheme.durationMonths}
                 </span>
               </div>
@@ -116,12 +116,15 @@ export function ChitSchemeCard({ scheme }: { scheme: ChitScheme }) {
           Starts: {formatDate(scheme.startDate, 'dd MMM yyyy')}
         </span>
 
-        <Link href={`/chits/${scheme.id}`}>
-          <Button variant="outline" size="sm" className="h-8.5 px-3.5 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 cursor-pointer">
-            <span>Manage Scheme</span>
-            <ArrowRight className="w-3.5 h-3.5 ml-1 stroke-[2]" />
-          </Button>
-        </Link>
+        <Button
+          href={`/chits/${scheme.id}`}
+          variant="outline"
+          size="sm"
+          className="font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300"
+        >
+          <span>Manage Scheme</span>
+          <ArrowRight className="w-3.5 h-3.5 ml-1 stroke-[2]" />
+        </Button>
       </div>
     </Card>
   );

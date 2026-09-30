@@ -76,7 +76,7 @@ export default function NotificationsCenterPage() {
           <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             System Notification Center
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Operational alerts, upcoming EMI collections, auction notices, and KYC review requests.
           </p>
         </div>
@@ -86,7 +86,7 @@ export default function NotificationsCenterPage() {
             variant="outline"
             size="sm"
             onClick={() => markAllAsRead.mutate()}
-            className="gap-1.5 text-xs bg-white"
+            className="gap-1.5 text-xs bg-white dark:bg-slate-900"
           >
             <CheckCheck className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
             <span>Mark All As Read</span>
@@ -95,9 +95,9 @@ export default function NotificationsCenterPage() {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
-        <div className="flex items-center gap-3 w-full sm:w-auto flex-wrap">
-          <div className="w-44">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+        <div className="flex items-center gap-2.5 w-full sm:w-auto flex-wrap">
+          <div className="w-full sm:w-44">
             <Select
               value={filterType}
               onChange={(e) => setFilterType(e.target.value)}
@@ -113,7 +113,7 @@ export default function NotificationsCenterPage() {
             />
           </div>
 
-          <div className="w-36">
+          <div className="w-full sm:w-36">
             <Select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
@@ -127,7 +127,7 @@ export default function NotificationsCenterPage() {
           </div>
         </div>
 
-        <div className="text-xs text-slate-400">
+        <div className="text-xs text-slate-400 self-start sm:self-auto">
           Showing {filtered.length} of {notifications.length} alerts
         </div>
       </div>
@@ -146,18 +146,18 @@ export default function NotificationsCenterPage() {
           {filtered.map((item) => (
             <Card
               key={item.id}
-              className={`p-4 transition-all hover:shadow-xs ${
+              className={`p-3.5 sm:p-4 transition-all hover:shadow-xs ${
                 !item.isRead ? 'border-brand-200 dark:border-brand-900/60 bg-brand-50/20 dark:bg-brand-950/20' : 'border-slate-200/80 bg-white dark:bg-slate-900'
               }`}
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex items-start gap-3.5">
-                  <div className="p-2.5 rounded-xl bg-slate-100 shrink-0 mt-0.5">
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 shrink-0 mt-0.5">
                     {getIcon(item.type)}
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="font-bold text-slate-900 dark:text-slate-100 text-sm">{item.title}</h3>
+                      <h3 className="font-semibold text-slate-900 dark:text-slate-100 text-sm">{item.title}</h3>
                       {getPriorityBadge(item.priority)}
                       {!item.isRead && (
                         <span className="text-[10px] bg-brand-100 dark:bg-brand-950/60 text-brand-700 dark:text-brand-300 px-1.5 py-0.5 rounded font-semibold">
@@ -165,17 +165,17 @@ export default function NotificationsCenterPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-xs text-slate-600 max-w-2xl">{item.message}</p>
-                    <p className="text-[11px] text-slate-400 pt-1">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">{item.message}</p>
+                    <p className="text-[11px] text-slate-400 dark:text-slate-500 pt-0.5">
                       Received: {formatDate(item.createdAt, 'dd MMM yyyy, hh:mm a')}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex items-center gap-2 shrink-0 self-end sm:self-start pt-1 sm:pt-0">
                   {item.link && (
-                    <Link href={item.link}>
-                      <Button variant="outline" size="sm" className="h-8 px-2.5 text-xs text-brand-600 dark:text-brand-400 bg-white dark:bg-slate-900">
+                    <Link href={item.link} prefetch={true}>
+                      <Button variant="outline" size="xs" className="text-brand-600 dark:text-brand-400 bg-white dark:bg-slate-900">
                         <span>View Context</span>
                         <ArrowRight className="w-3.5 h-3.5 ml-1" />
                       </Button>
@@ -185,9 +185,9 @@ export default function NotificationsCenterPage() {
                   {!item.isRead && (
                     <Button
                       variant="ghost"
-                      size="sm"
+                      size="xs"
                       onClick={() => markAsRead.mutate(item.id)}
-                      className="h-8 px-2 text-xs text-slate-500 hover:text-slate-800"
+                      className="text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
                     >
                       Dismiss
                     </Button>

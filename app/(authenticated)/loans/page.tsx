@@ -30,10 +30,10 @@ export default function LoansPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Loan Accounts & Collaterals
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
             Manage Gold loans, Two-wheeler vehicle hypothecations, and Personal guarantor credit facilities.
           </p>
         </div>
@@ -53,20 +53,20 @@ export default function LoansPage() {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3.5 bg-white dark:bg-slate-900 p-4 sm:p-5 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
         <div className="flex-1 w-full sm:max-w-md">
           <Input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search borrower name or loan code (e.g. GL-2024)..."
-            startIcon={<Search className="w-4.5 h-4.5 stroke-[1.8]" />}
-            className="h-10 text-sm"
+            startIcon={<Search className="w-4 h-4 stroke-[1.8]" />}
+            className="h-9 sm:h-10 text-sm"
           />
         </div>
 
         <div className="flex items-center gap-3 w-full sm:w-auto flex-wrap">
-          <div className="w-full sm:w-40">
+          <div className="w-full sm:w-44">
             <Select
               value={type}
               onChange={(e) => setType(e.target.value as any)}
@@ -77,11 +77,11 @@ export default function LoansPage() {
                 { label: 'Guarantor Loan', value: 'GUARANTOR' },
                 { label: 'Nominee Loan', value: 'NOMINEE' },
               ]}
-              className="h-10 text-sm"
+              className="h-9 sm:h-10 text-sm"
             />
           </div>
 
-          <div className="w-full sm:w-44">
+          <div className="w-full sm:w-48">
             <Select
               value={status}
               onChange={(e) => setStatus(e.target.value as any)}
@@ -91,7 +91,7 @@ export default function LoansPage() {
                 { label: 'Pending Approval', value: 'PENDING_APPROVAL' },
                 { label: 'Closed / Settled', value: 'CLOSED' },
               ]}
-              className="h-10 text-sm"
+              className="h-9 sm:h-10 text-sm"
             />
           </div>
         </div>

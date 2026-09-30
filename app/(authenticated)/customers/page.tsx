@@ -38,7 +38,7 @@ export default function CustomersPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Customer Directory
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
@@ -85,25 +85,25 @@ export default function CustomersPage() {
           <CustomerListTable customers={data.data} />
 
           {/* Pagination */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-2 text-xs text-slate-500 dark:text-slate-400">
-            <span>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 px-2 text-sm text-slate-600 dark:text-slate-300">
+            <span className="font-medium">
               Showing {data.data.length} of {data.meta.total} customers
             </span>
             <div className="flex items-center gap-2">
               <Button
                 variant="outline"
-                size="xs"
+                size="sm"
                 disabled={page <= 1}
                 onClick={() => setPage((p) => Math.max(1, p - 1))}
               >
                 Previous
               </Button>
-              <span className="font-semibold text-slate-700 dark:text-slate-300">
+              <span className="font-semibold text-slate-800 dark:text-slate-200 px-1">
                 Page {data.meta.page} of {data.meta.totalPages}
               </span>
               <Button
                 variant="outline"
-                size="xs"
+                size="sm"
                 disabled={page >= data.meta.totalPages}
                 onClick={() => setPage((p) => p + 1)}
               >

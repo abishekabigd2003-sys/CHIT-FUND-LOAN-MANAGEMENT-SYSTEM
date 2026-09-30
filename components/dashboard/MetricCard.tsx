@@ -56,7 +56,7 @@ export function MetricCard({
           </p>
           <div
             className={cn(
-              'flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-xl shrink-0 transition-transform duration-200 group-hover:scale-105 shadow-2xs',
+              'flex items-center justify-center w-8 h-8 rounded-xl shrink-0 transition-transform duration-200 group-hover:scale-105 shadow-2xs',
               iconBg,
               iconColor
             )}
@@ -65,12 +65,12 @@ export function MetricCard({
           </div>
         </div>
 
-        <div className="mt-2.5">
+        <div className="mt-2">
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-50 tabular-nums leading-tight">
             {value}
           </h3>
           {subtitle && (
-            <p className="text-[11px] font-medium text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5 truncate">
+            <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1.5 truncate">
               {subtitle}
             </p>
           )}
@@ -78,7 +78,7 @@ export function MetricCard({
       </div>
 
       {change !== undefined && (
-        <div className="mt-3.5 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
+        <div className="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs">
           <span
             className={cn(
               'inline-flex items-center gap-1 font-semibold px-2 py-0.5 rounded-full text-[11px] shadow-2xs',

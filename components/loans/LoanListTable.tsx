@@ -68,11 +68,11 @@ export function LoanListTable({ loans }: LoanListTableProps) {
                   <Link
                     href={`/loans/${loan.id}`}
                     prefetch={true}
-                    className="font-mono font-bold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 text-sm hover:underline"
+                    className="font-mono font-semibold text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 text-sm hover:underline"
                   >
                     {loan.loanCode}
                   </Link>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">
                     {formatDate(loan.disbursedAt || loan.createdAt)}
                   </p>
                 </div>
@@ -87,35 +87,35 @@ export function LoanListTable({ loans }: LoanListTableProps) {
                   >
                     {loan.customerName}
                   </Link>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{loan.customerPhone || loan.customerCode}</p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 font-normal">{loan.customerPhone || loan.customerCode}</p>
                 </div>
               </TableCell>
 
               <TableCell>{getLoanTypeBadge(loan.loanType)}</TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="font-bold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
+                <span className="font-semibold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
                   {formatCurrency(loan.principalAmount)}
                 </span>
-                <span className="text-xs text-slate-500 dark:text-slate-400 block mt-0.5">
+                <span className="text-xs text-slate-500 dark:text-slate-400 block mt-0.5 font-normal">
                   {loan.interestRateAnnual}% p.a. • {loan.tenureMonths}M
                 </span>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="font-bold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
+                <span className="font-semibold text-slate-900 dark:text-slate-100 text-sm tabular-nums">
                   {formatCurrency(loan.emiAmount)}
                 </span>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="font-bold text-rose-600 dark:text-rose-400 text-sm tabular-nums">
+                <span className="font-semibold text-rose-600 dark:text-rose-400 text-sm tabular-nums">
                   {formatCurrency(loan.totalOutstanding)}
                 </span>
               </TableCell>
 
               <TableCell className="whitespace-nowrap">
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                <span className="text-sm font-normal text-slate-700 dark:text-slate-300">
                   {loan.nextDueDate ? formatDate(loan.nextDueDate) : '-'}
                 </span>
               </TableCell>
@@ -125,10 +125,10 @@ export function LoanListTable({ loans }: LoanListTableProps) {
               <TableCell className="text-right whitespace-nowrap">
                 <Button
                   href={`/loans/${loan.id}`}
-                  variant="ghost"
+                  variant="outline"
                   size="xs"
-                  leftIcon={<Eye className="w-4 h-4 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
-                  rightIcon={<ChevronRight className="w-3.5 h-3.5 opacity-60 stroke-[2]" />}
+                  leftIcon={<Eye className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
+                  rightIcon={<ChevronRight className="w-3 h-3 opacity-60 stroke-[2]" />}
                 >
                   View
                 </Button>

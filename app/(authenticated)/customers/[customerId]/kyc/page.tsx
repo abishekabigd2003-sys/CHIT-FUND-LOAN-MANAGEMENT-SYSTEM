@@ -17,6 +17,7 @@ import {
   FileText,
   Clock,
 } from 'lucide-react';
+import { Button } from '@/components/ui/Button';
 
 export default function CustomerKycDetailPage() {
   const params = useParams();
@@ -153,21 +154,24 @@ export default function CustomerKycDetailPage() {
                   {doc.status}
                 </span>
 
-                <a
+                <Button
                   href={doc.fileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 font-semibold inline-flex items-center gap-1"
+                  variant="outline"
+                  size="xs"
+                  leftIcon={<ExternalLink className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
                 >
-                  <ExternalLink className="w-3.5 h-3.5" /> Preview
-                </a>
+                  Preview
+                </Button>
 
-                <button
+                <Button
+                  variant="primary"
+                  size="xs"
                   onClick={() => setSelectedDocForVerify(doc)}
-                  className="px-3 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold transition-colors"
                 >
                   Verify / Audit
-                </button>
+                </Button>
               </div>
             </div>
           ))}

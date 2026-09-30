@@ -17,16 +17,16 @@ export default function ChitCollectionsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Chit Collections Tracking
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 font-normal">
             Monitor cumulative capital collections, dividend deductions, and foreman fee earnings.
           </p>
         </div>
 
-        <Link href="/payments">
-          <Button variant="primary" size="sm" className="text-xs">
+        <Link href="/payments" prefetch={true}>
+          <Button variant="primary" size="sm" className="font-semibold shadow-2xs">
             Open Payment Terminal
           </Button>
         </Link>
@@ -101,12 +101,14 @@ export default function ChitCollectionsPage() {
                     </TableCell>
 
                     <TableCell className="text-right">
-                      <Link href={`/chits/${scheme.id}`}>
-                        <Button variant="ghost" size="sm" className="h-7 px-2 text-blue-600">
-                          <span>Details</span>
-                          <ArrowUpRight className="w-3.5 h-3.5 ml-1" />
-                        </Button>
-                      </Link>
+                      <Button
+                        href={`/chits/${scheme.id}`}
+                        variant="outline"
+                        size="xs"
+                        rightIcon={<ArrowUpRight className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
+                      >
+                        Details
+                      </Button>
                     </TableCell>
                   </TableRow>
                 );

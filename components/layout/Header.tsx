@@ -84,21 +84,21 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
           >
             <div className="flex items-center gap-2.5 min-w-0">
               <Search className="w-4 h-4 text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 shrink-0 stroke-[2] transition-colors" />
-              <span className="font-normal text-slate-500 dark:text-slate-400 truncate hidden sm:inline">
+              <span className="font-medium text-slate-500 dark:text-slate-400 truncate hidden sm:inline">
                 Search customers, loans, chits...
               </span>
-              <span className="font-normal text-slate-500 dark:text-slate-400 truncate sm:hidden">
+              <span className="font-medium text-slate-500 dark:text-slate-400 truncate sm:hidden">
                 Search...
               </span>
             </div>
-            <kbd className="hidden md:inline-flex items-center gap-1 text-[10px] font-semibold text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0 ml-2">
-              <span className="text-[11px]">⌘</span>K
+            <kbd className="hidden md:inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 shadow-2xs shrink-0 ml-2">
+              <span className="text-xs">⌘</span>K
             </kbd>
           </button>
         </div>
 
         {/* Right Side: Role Switcher, Notification Dropdown, Profile */}
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 ml-2">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-2">
           {/* Role Switcher */}
           <RoleSwitcher />
 
@@ -109,7 +109,7 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
           <div className="relative" ref={profileMenuRef}>
             <button
               onClick={() => setShowProfileMenu((prev) => !prev)}
-              className="flex items-center gap-2 sm:gap-2.5 p-1 sm:p-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors text-left group cursor-pointer"
+              className="flex items-center gap-2 sm:gap-2.5 p-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors text-left group cursor-pointer min-h-[38px]"
               aria-label="User profile menu"
               aria-expanded={showProfileMenu}
               aria-haspopup="true"
@@ -119,10 +119,10 @@ export const Header = React.memo(function Header({ onMenuClick }: { onMenuClick?
                   <img
                     src={user.avatarUrl}
                     alt={user.name}
-                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover ring-2 ring-slate-200/80 dark:ring-slate-700 shadow-2xs"
+                    className="w-8 h-8 rounded-full object-cover ring-2 ring-slate-200/80 dark:ring-slate-700 shadow-2xs"
                   />
                 ) : (
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-brand-700 to-brand-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-700 to-brand-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
                     {user?.name?.charAt(0) || 'U'}
                   </div>
                 )}

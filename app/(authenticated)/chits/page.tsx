@@ -30,17 +30,16 @@ export default function ChitsPage() {
           <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Chit Fund Schemes
           </h1>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
             Create and monitor registered chit groups, subscriber rosters, and reverse auction settlements.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Button
             href="/chits/subscriptions"
             variant="outline"
             size="sm"
-            className="text-xs"
           >
             All Subscriptions
           </Button>
@@ -48,8 +47,7 @@ export default function ChitsPage() {
             href="/chits/new"
             variant="primary"
             size="sm"
-            leftIcon={<PlusCircle className="w-3.5 h-3.5" />}
-            className="text-xs shadow-2xs"
+            leftIcon={<PlusCircle className="w-4 h-4 stroke-[2]" />}
           >
             Create Chit Scheme
           </Button>
@@ -57,7 +55,7 @@ export default function ChitsPage() {
       </div>
 
       {/* Filter Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white dark:bg-slate-900 p-3.5 sm:p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-2xs">
         <div className="flex-1 w-full sm:max-w-md">
           <Input
             type="text"
@@ -65,11 +63,11 @@ export default function ChitsPage() {
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search scheme name or code (e.g. CFT-500K)..."
             startIcon={<Search className="w-4 h-4" />}
-            className="h-9 text-xs"
+            className="h-9 sm:h-10 text-sm"
           />
         </div>
 
-        <div className="w-full sm:w-48">
+        <div className="w-full sm:w-52">
           <Select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
@@ -79,7 +77,7 @@ export default function ChitsPage() {
               { label: 'Upcoming Enrollments', value: 'UPCOMING' },
               { label: 'Matured & Settled', value: 'COMPLETED' },
             ]}
-            className="h-9 text-xs py-1"
+            className="h-9 sm:h-10 text-sm"
           />
         </div>
       </div>

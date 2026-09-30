@@ -151,10 +151,9 @@ export function KycProfileTable({ profiles, isLoading }: KycProfileTableProps) {
               <td className="py-3.5 px-4 text-right">
                 <Button
                   href={`/customers/${p.customerId}/kyc`}
-                  variant="ghost"
+                  variant="outline"
                   size="xs"
                   leftIcon={<Eye className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400 stroke-[1.8]" />}
-                  className="font-semibold"
                 >
                   Inspect
                 </Button>

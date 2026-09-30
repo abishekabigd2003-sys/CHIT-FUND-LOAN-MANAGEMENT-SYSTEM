@@ -39,16 +39,16 @@ export default function ChitSubscriptionsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
             Chit Subscriptions Master Roster
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5 sm:mt-1 font-normal">
             Consolidated directory of all enrolled members, active ticket allocations, and prize distributions.
           </p>
         </div>
 
-        <Link href="/chits">
-          <Button variant="outline" size="sm" className="text-xs">
+        <Link href="/chits" prefetch={true}>
+          <Button variant="outline" size="sm">
             View All Schemes
           </Button>
         </Link>

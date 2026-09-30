@@ -83,7 +83,7 @@ export function RoleSwitcher() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          'flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-xl border text-xs sm:text-sm font-semibold transition-all shadow-2xs cursor-pointer',
+          'flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 min-h-[36px] rounded-xl border text-xs sm:text-sm font-medium transition-all shadow-2xs cursor-pointer',
           current.color
         )}
         title="Simulate Role Navigation"
